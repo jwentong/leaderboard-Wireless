@@ -1,16 +1,24 @@
+# WCHW Benchmark Leaderboard Scenario Configuration
+# For AgentBeats Competition - UC Berkeley RDI Foundation
+
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+# Green Agent: WCHW Benchmark Evaluator
+# Docker image: ghcr.io/jwentong/green-agent:latest
+# For local testing, use 'image' field instead of 'agentbeats_id'
+agentbeats_id = ""  # Fill in after registering on agentbeats.dev
+image = "ghcr.io/jwentong/green-agent:latest"  # For local testing
+env = { LOG_LEVEL = "INFO" }
 
 [[participants]]
-agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
+# Purple Agent: Wireless Communication Solver (Baseline)
+# Docker image: ghcr.io/jwentong/purple-agent-wirelessagent:latest
+agentbeats_id = ""  # Fill in after registering on agentbeats.dev
+image = "ghcr.io/jwentong/purple-agent-wirelessagent:latest"  # For local testing
+name = "wireless_solver"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
-# Add your assessment config here
+# WCHW Benchmark Configuration
+num_problems = 10
+timeout = 120
+dataset = "test"  # Options: "test", "validate"
