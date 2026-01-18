@@ -1,0 +1,205 @@
+{
+  "participants": {
+    "wireless_solver": "019bb79f-e796-7ea3-8dab-21036df3d412"
+  },
+  "results": [
+    {
+      "summary": {
+        "total_problems": 1044,
+        "evaluated": 10,
+        "average_score": 0.03,
+        "max_score": 0.3,
+        "min_score": 0.0,
+        "by_category": {},
+        "by_answer_type": {
+          "numeric": {
+            "count": 7,
+            "average": 0.04285714285714286,
+            "max": 0.3,
+            "min": 0.0
+          },
+          "scientific": {
+            "count": 3,
+            "average": 0.0,
+            "max": 0.0,
+            "min": 0.0
+          }
+        }
+      },
+      "results": [
+        {
+          "problem_id": "test_162",
+          "question": "Given K=0.5 and E_b/N_0=10 dB, compute |\u03b5|/T using |\u03b5|/T=0.33/\\sqrt(10K\u00b7E_b/N_0).",
+          "expected_answer": "0.0467",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '77c9ea54-64af-9348-ab70-11ecee8154d2'}",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.0467",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '77c9ea54-64af-9348-ab70-11ecee8154d2'}",
+            "expected_value": 0.0467,
+            "predicted_value": 2.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_439",
+          "question": "Coherent BPSK over AWGN. Given BER target P_b=10^{-4}, find required E_b/N_0 in dB.",
+          "expected_answer": "8.40 dB",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'eb13b4b3-5353-9817-97d0-41b6c80eb1fc'}",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "8.40 dB",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'eb13b4b3-5353-9817-97d0-41b6c80eb1fc'}",
+            "expected_value": 8.4,
+            "predicted_value": 1.0,
+            "expected_unit": "db",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_962",
+          "question": "A PM signal is s(t)=A_c cos(\u03c9_c t + k_p m(t)). If k_p=2 rad/V and max m(t)=1.5 V, find max phase deviation.",
+          "expected_answer": "3 rad",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'de91de57-8ef2-902b-b7b1-6676ba2c77b6'}",
+          "score": 0.3,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "3 rad",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'de91de57-8ef2-902b-b7b1-6676ba2c77b6'}",
+            "expected_value": 3.0,
+            "predicted_value": 6.0,
+            "expected_unit": "rad",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_876",
+          "question": "A 3 kHz telephone channel uses BPSK with \u03b1=0.5 RC shaping. Find max bit rate.",
+          "expected_answer": "4 kbit/s",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '8a35957a-4dd1-90d3-bb8e-1079c99da216'}",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "4 kbit/s",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '8a35957a-4dd1-90d3-bb8e-1079c99da216'}",
+            "expected_value": 4000.0,
+            "predicted_value": 0.0,
+            "expected_unit": "kbit/s",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_636",
+          "question": "Rectangular pulse matched filter: If A=5 and T=200 \u03bcs, find peak output and the time it occurs.",
+          "expected_answer": "Peak=5.00e-3 at t=T",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '06e42e40-794a-9a79-9a53-0ac6f6093814'}",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "Peak=5.00e-3 at t=T",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '06e42e40-794a-9a79-9a53-0ac6f6093814'}",
+            "expected_value": 0.005,
+            "predicted_value": 6e+42,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_740",
+          "question": "Antipodal NRZ. If BER requirement is 5\u00d710^{-4} and P_b=Q(\\sqrt{2E_b/N_0}), find E_b/N_0 (dB).",
+          "expected_answer": "7.27 dB",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '4384d06a-8a52-9e2d-a1e8-74cf656ffb6e'}",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "7.27 dB",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '4384d06a-8a52-9e2d-a1e8-74cf656ffb6e'}",
+            "expected_value": 7.27,
+            "predicted_value": 100000000.0,
+            "expected_unit": "db",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_689",
+          "question": "A channel has loss L=90 dB. If transmit power is 1 W, what received power is obtained (W)?",
+          "expected_answer": "1.0e-9 W",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'c47cc4cc-bc30-9358-8cb5-1930d2b0a390'}",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "1.0e-9 W",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'c47cc4cc-bc30-9358-8cb5-1930d2b0a390'}",
+            "expected_value": 1e-09,
+            "predicted_value": 390.0,
+            "expected_unit": "w",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_19",
+          "question": "Outage capacity. SNR states \u03b3={10, 3, 1, 0.2} with probabilities {0.3,0.3,0.3,0.1}. With outage threshold \u03b3_min=1, compute C/B=(1-p_out)log2(1+\u03b3_min).",
+          "expected_answer": "0.900 bps/Hz",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'a6bda5a1-83ef-9210-9512-794bedb5872b'}",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.900 bps/Hz",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': 'a6bda5a1-83ef-9210-9512-794bedb5872b'}",
+            "expected_value": 0.9,
+            "predicted_value": 5872.0,
+            "expected_unit": "bps/hz",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_437",
+          "question": "Energy per bit from received power. Received power P_r=1 \u03bcW and bit rate R_b=200 kbit/s. Compute E_b (J).",
+          "expected_answer": "5.00e-12 J",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '691a058f-8e0e-90b2-879e-4b48a6bea7a7'}",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "5.00e-12 J",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '691a058f-8e0e-90b2-879e-4b48a6bea7a7'}",
+            "expected_value": 5e-12,
+            "predicted_value": -0.0879,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_20",
+          "question": "For the water-filling cutoff \u03b30=0.6742, compute normalized power S(\u03b3)/S when \u03b3=2.",
+          "expected_answer": "0.983",
+          "agent_answer": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '29a341a9-29a8-9dce-9a61-e8979b2972d0'}",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.983",
+            "predicted": "Error calling Qwen API: Error code: 401 - {'error': {'message': \"You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY). \", 'type': 'invalid_request_error', 'param': None, 'code': None}, 'request_id': '29a341a9-29a8-9dce-9a61-e8979b2972d0'}",
+            "expected_value": 0.983,
+            "predicted_value": 0.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        }
+      ],
+      "benchmark": "WCHW",
+      "version": "1.0.0"
+    }
+  ]
+}
