@@ -1,0 +1,21 @@
+# WCHW Benchmark Leaderboard Scenario Configuration
+# For AgentBeats Competition - UC Berkeley RDI Foundation
+
+[green_agent]
+# Green Agent: WCHW Benchmark Evaluator
+# Docker image: ghcr.io/jwentong/green-agent:latest
+agentbeats_id = "019bb789-1010-7860-99ee-1ec2bd55a7e5"
+env = { LOG_LEVEL = "INFO" }
+
+[[participants]]
+# Purple Agent: Wireless Communication Solver (Baseline)
+# Docker image: ghcr.io/jwentong/purple-agent-wirelessagent:latest
+agentbeats_id = "019bb79f-e796-7ea3-8dab-21036df3d412"
+name = "wireless_solver"
+env = { DASHSCOPE_API_KEY = "${DASHSCOPE_API_KEY}" }
+
+[config]
+# WCHW Benchmark Configuration 
+num_problems = 40
+timeout = 120
+dataset = "test"  # Options: "test", "validate"

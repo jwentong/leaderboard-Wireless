@@ -1,0 +1,715 @@
+{
+  "participants": {
+    "wireless_solver": "019bb79f-e796-7ea3-8dab-21036df3d412"
+  },
+  "results": [
+    {
+      "summary": {
+        "total_problems": 1044,
+        "evaluated": 40,
+        "average_score": 0.625,
+        "max_score": 1.0,
+        "min_score": 0.0,
+        "by_category": {},
+        "by_answer_type": {
+          "numeric": {
+            "count": 32,
+            "average": 0.71875,
+            "max": 1.0,
+            "min": 0.0
+          },
+          "formula": {
+            "count": 2,
+            "average": 1.0,
+            "max": 1.0,
+            "min": 1.0
+          },
+          "scientific": {
+            "count": 6,
+            "average": 0.0,
+            "max": 0.0,
+            "min": 0.0
+          }
+        }
+      },
+      "results": [
+        {
+          "problem_id": "test_730",
+          "question": "Compute minimum received power for antipodal signaling. Target BER=10^{-4}, bit rate R_b=100 kbit/s, N0/2=1e-9 W/Hz. Use BPSK formula and P_r=E_b R_b.",
+          "expected_answer": "0.138 W",
+          "agent_answer": "To compute the **minimum received power** $ P_r $ for antipodal signaling (which is equivalent to BPSK in this context), we follow these steps:\n\n---\n\n### **Given:**\n- Target BER = $ 10^{-4} $\n- Bit rate $ R_b = 100 \\, \\text{kbit/s} = 10^5 \\, \\text{bits/s} $\n- Noise power spectral density: $ \\frac{N_0}{2} = 10^{-9} \\, \\text{W/Hz} $\n- For BPSK (antipodal signaling), the BER is given by:\n  $$\n  \\text{BER} = Q\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right)\n  $$\n\nWe are told:\n$$\nP_r = E_b \\cdot R_b\n$$\nSo, we need to find $ E_b $ first from the BER equation, then compute $ P_r $.\n\n---\n\n### **Step 1: Solve for $ \\frac{E_b}{N_0} $ from BER**\n\nFrom the BER formula:\n$$\nQ\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right) = 10^{-4}\n$$\n\nLet\u2019s solve for $ x = \\sqrt{\\frac{2E_b}{N_0}} $ such that $ Q(x) = 10^{-4} $\n\nFrom standard Q-function tables or using approximation:\n$$\nQ(3.719) \\approx 10^{-4}\n$$\n\nSo:\n$$\n\\sqrt{\\frac{2E_b}{N_0}} = 3.719\n$$\n\nSquare both sides:\n$$\n\\frac{2E_b}{N_0} = (3.719)^2 \\approx 13.83\n$$\n\nThus:\n$$\n\\frac{E_b}{N_0} = \\frac{13.83}{2} = 6.915\n$$\n\n---\n\n### **Step 2: Compute $ E_b $**\n\nWe know:\n$$\n\\frac{N_0}{2} = 10^{-9} \\Rightarrow N_0 = 2 \\times 10^{-9} \\, \\text{W/Hz}\n$$\n\nNow:\n$$\nE_b = 6.915 \\cdot N_0 = 6.915 \\cdot 2 \\times 10^{-9} = 1.383 \\times 10^{-8} \\, \\text{Joules}\n$$\n\n---\n\n### **Step 3: Compute $ P_r = E_b \\cdot R_b $**\n\n$$\nP_r = (1.383 \\times 10^{-8}) \\cdot (10^5) = 1.383 \\times 10^{-3} \\, \\text{W}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\boxed{P_r = 1.383 \\, \\text{mW}}\n$$\n\nThis is the **minimum received power** required to achieve a BER of $ 10^{-4} $ with BPSK at 100 kbit/s and noise spectral density $ N_0/2 = 10^{-9} \\, \\text{W/Hz} $.",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.138 W",
+            "predicted": "To compute the **minimum received power** $ P_r $ for antipodal signaling (which is equivalent to BPSK in this context), we follow these steps:\n\n---\n\n### **Given:**\n- Target BER = $ 10^{-4} $\n- Bit rate $ R_b = 100 \\, \\text{kbit/s} = 10^5 \\, \\text{bits/s} $\n- Noise power spectral density: $ \\frac{N_0}{2} = 10^{-9} \\, \\text{W/Hz} $\n- For BPSK (antipodal signaling), the BER is given by:\n  $$\n  \\text{BER} = Q\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right)\n  $$\n\nWe are told:\n$$\nP_r = E_b \\cdot R_b\n$$\nSo, we need to find $ E_b $ first from the BER equation, then compute $ P_r $.\n\n---\n\n### **Step 1: Solve for $ \\frac{E_b}{N_0} $ from BER**\n\nFrom the BER formula:\n$$\nQ\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right) = 10^{-4}\n$$\n\nLet\u2019s solve for $ x = \\sqrt{\\frac{2E_b}{N_0}} $ such that $ Q(x) = 10^{-4} $\n\nFrom standard Q-function tables or using approximation:\n$$\nQ(3.719) \\approx 10^{-4}\n$$\n\nSo:\n$$\n\\sqrt{\\frac{2E_b}{N_0}} = 3.719\n$$\n\nSquare both sides:\n$$\n\\frac{2E_b}{N_0} = (3.719)^2 \\approx 13.83\n$$\n\nThus:\n$$\n\\frac{E_b}{N_0} = \\frac{13.83}{2} = 6.915\n$$\n\n---\n\n### **Step 2: Compute $ E_b $**\n\nWe know:\n$$\n\\frac{N_0}{2} = 10^{-9} \\Rightarrow N_0 = 2 \\times 10^{-9} \\, \\text{W/Hz}\n$$\n\nNow:\n$$\nE_b = 6.915 \\cdot N_0 = 6.915 \\cdot 2 \\times 10^{-9} = 1.383 \\times 10^{-8} \\, \\text{Joules}\n$$\n\n---\n\n### **Step 3: Compute $ P_r = E_b \\cdot R_b $**\n\n$$\nP_r = (1.383 \\times 10^{-8}) \\cdot (10^5) = 1.383 \\times 10^{-3} \\, \\text{W}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\boxed{P_r = 1.383 \\, \\text{mW}}\n$$\n\nThis is the **minimum received power** required to achieve a BER of $ 10^{-4} $ with BPSK at 100 kbit/s and noise spectral density $ N_0/2 = 10^{-9} \\, \\text{W/Hz} $.",
+            "expected_value": 0.138,
+            "predicted_value": -9.0,
+            "expected_unit": "w",
+            "predicted_unit": "hz"
+          }
+        },
+        {
+          "problem_id": "test_652",
+          "question": "A PCM system has amplitude range -2 V to 2 V and uses n=7 bits per sample. Using \\(L=\\text{range}/\\Delta\\), find the quantization step \\(\\Delta\\).",
+          "expected_answer": "0.03125 V",
+          "agent_answer": "We are given:\n\n- Amplitude range: from **-2 V to 2 V**\n- Number of bits per sample: **n = 7**\n- The formula:  \n  $$\n  L = \\frac{\\text{range}}{\\Delta}\n  $$\n  where:\n  - $ L $ is the number of quantization levels\n  - $ \\Delta $ is the quantization step size\n  - Range = $ 2 - (-2) = 4 $ V\n\n---\n\n### Step 1: Find $ L $\nFor an $ n $-bit PCM system, the number of quantization levels is:\n$$\nL = 2^n = 2^7 = 128\n$$\n\n---\n\n### Step 2: Use the formula to solve for $ \\Delta $\n\n$$\nL = \\frac{\\text{range}}{\\Delta} \\Rightarrow \\Delta = \\frac{\\text{range}}{L}\n$$\n\nSubstitute values:\n$$\n\\Delta = \\frac{4}{128} = 0.03125 \\text{ V}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\Delta = 0.03125 \\text{ V} \\quad \\text{or} \\quad 31.25 \\text{ mV}\n$$",
+          "score": 0.5,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.03125 V",
+            "predicted": "We are given:\n\n- Amplitude range: from **-2 V to 2 V**\n- Number of bits per sample: **n = 7**\n- The formula:  \n  $$\n  L = \\frac{\\text{range}}{\\Delta}\n  $$\n  where:\n  - $ L $ is the number of quantization levels\n  - $ \\Delta $ is the quantization step size\n  - Range = $ 2 - (-2) = 4 $ V\n\n---\n\n### Step 1: Find $ L $\nFor an $ n $-bit PCM system, the number of quantization levels is:\n$$\nL = 2^n = 2^7 = 128\n$$\n\n---\n\n### Step 2: Use the formula to solve for $ \\Delta $\n\n$$\nL = \\frac{\\text{range}}{\\Delta} \\Rightarrow \\Delta = \\frac{\\text{range}}{L}\n$$\n\nSubstitute values:\n$$\n\\Delta = \\frac{4}{128} = 0.03125 \\text{ V}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\Delta = 0.03125 \\text{ V} \\quad \\text{or} \\quad 31.25 \\text{ mV}\n$$",
+            "expected_value": 0.03125,
+            "predicted_value": 31.25,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_235",
+          "question": "Compute BER for coherent BFSK at E_b/N0=0 dB.",
+          "expected_answer": "0.1587",
+          "agent_answer": "To compute the Bit Error Rate (BER) for **coherent Binary Frequency Shift Keying (BFSK)** at $ E_b/N_0 = 0 \\, \\text{dB} $, we use the well-known analytical expression:\n\n$$\nP_b = \\frac{1}{2} \\exp\\left(-\\frac{E_b}{N_0}\\right)\n$$\n\n### Step-by-step:\n- Given: $ E_b/N_0 = 0 \\, \\text{dB} $\n- Convert to linear scale:  \n  $$\n  \\frac{E_b}{N_0} = 10^{0/10} = 1\n  $$\n\n- Plug into the BER formula:\n  $$\n  P_b = \\frac{1}{2} \\exp(-1) = \\frac{1}{2} \\cdot \\frac{1}{e} \\approx \\frac{1}{2} \\cdot 0.3679 = 0.18395\n  $$\n\n### Final Answer:\n$$\n\\text{BER} \\approx 0.184 \\quad \\text{(or } 18.4\\%\\text{)}\n$$\n\nThis is the theoretical BER for coherent BFSK at $ E_b/N_0 = 0 \\, \\text{dB} $.",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.1587",
+            "predicted": "To compute the Bit Error Rate (BER) for **coherent Binary Frequency Shift Keying (BFSK)** at $ E_b/N_0 = 0 \\, \\text{dB} $, we use the well-known analytical expression:\n\n$$\nP_b = \\frac{1}{2} \\exp\\left(-\\frac{E_b}{N_0}\\right)\n$$\n\n### Step-by-step:\n- Given: $ E_b/N_0 = 0 \\, \\text{dB} $\n- Convert to linear scale:  \n  $$\n  \\frac{E_b}{N_0} = 10^{0/10} = 1\n  $$\n\n- Plug into the BER formula:\n  $$\n  P_b = \\frac{1}{2} \\exp(-1) = \\frac{1}{2} \\cdot \\frac{1}{e} \\approx \\frac{1}{2} \\cdot 0.3679 = 0.18395\n  $$\n\n### Final Answer:\n$$\n\\text{BER} \\approx 0.184 \\quad \\text{(or } 18.4\\%\\text{)}\n$$\n\nThis is the theoretical BER for coherent BFSK at $ E_b/N_0 = 0 \\, \\text{dB} $.",
+            "expected_value": 0.1587,
+            "predicted_value": 0.0,
+            "expected_unit": null,
+            "predicted_unit": "db"
+          }
+        },
+        {
+          "problem_id": "test_402",
+          "question": "Coherent BPSK over AWGN with a carrier phase offset \u03c6 at the receiver. If the decision statistic mean is \u00b1A cos\u03c6, what threshold minimizes BER?",
+          "expected_answer": "0",
+          "agent_answer": "To minimize the Bit Error Rate (BER) for a coherent BPSK system over an AWGN channel with a **carrier phase offset** $ \\phi $ at the receiver, we need to find the optimal **threshold** for making decisions on the received signal.\n\n---\n\n### Given:\n- Coherent BPSK: transmitted symbols are $ \\pm A $\n- AWGN noise: zero-mean Gaussian with variance $ N_0/2 $\n- Receiver has a phase offset $ \\phi $, so the decision statistic (matched filter output) is:\n  $$\n  r = \\pm A \\cos\\phi + n\n  $$\n  where $ n \\sim \\mathcal{N}(0, N_0/2) $\n\n- The mean of the decision statistic depends on the transmitted bit:\n  - If $ +A $ was sent: $ \\mathbb{E}[r] = +A \\cos\\phi $\n  - If $ -A $ was sent: $ \\mathbb{E}[r] = -A \\cos\\phi $\n\nSo the two conditional distributions are:\n- $ r \\sim \\mathcal{N}(A \\cos\\phi, N_0/2) $ if bit 1 is sent\n- $ r \\sim \\mathcal{N}(-A \\cos\\phi, N_0/2) $ if bit 0 is sent\n\n---\n\n### Goal:\nFind the threshold $ \\gamma $ that minimizes BER.\n\nFor binary hypothesis testing with equal priors and symmetric noise, the optimal threshold is the **midpoint between the two means**:\n\n$$\n\\gamma = \\frac{A \\cos\\phi + (-A \\cos\\phi)}{2} = 0\n$$\n\n\u2705 **Answer: The optimal threshold is $ \\gamma = 0 $**\n\n---\n\n### Why?\nEven though the signal amplitudes are scaled by $ \\cos\\phi $ due to phase offset, the **means are still symmetric about zero**, so the optimal decision boundary remains at zero. This holds as long as:\n- The prior probabilities of bits 0 and 1 are equal\n- The noise is additive white Gaussian (AWGN)\n\nThis is a key insight: **a phase offset reduces the effective signal amplitude but does not shift the decision threshold away from zero** \u2014 it only degrades SNR (since $ A \\cos\\phi < A $), increasing BER, but the threshold remains optimal at zero.\n\n---\n\n### Final Answer:\n**Threshold that minimizes BER: $ \\gamma = 0 $**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0",
+            "predicted": "To minimize the Bit Error Rate (BER) for a coherent BPSK system over an AWGN channel with a **carrier phase offset** $ \\phi $ at the receiver, we need to find the optimal **threshold** for making decisions on the received signal.\n\n---\n\n### Given:\n- Coherent BPSK: transmitted symbols are $ \\pm A $\n- AWGN noise: zero-mean Gaussian with variance $ N_0/2 $\n- Receiver has a phase offset $ \\phi $, so the decision statistic (matched filter output) is:\n  $$\n  r = \\pm A \\cos\\phi + n\n  $$\n  where $ n \\sim \\mathcal{N}(0, N_0/2) $\n\n- The mean of the decision statistic depends on the transmitted bit:\n  - If $ +A $ was sent: $ \\mathbb{E}[r] = +A \\cos\\phi $\n  - If $ -A $ was sent: $ \\mathbb{E}[r] = -A \\cos\\phi $\n\nSo the two conditional distributions are:\n- $ r \\sim \\mathcal{N}(A \\cos\\phi, N_0/2) $ if bit 1 is sent\n- $ r \\sim \\mathcal{N}(-A \\cos\\phi, N_0/2) $ if bit 0 is sent\n\n---\n\n### Goal:\nFind the threshold $ \\gamma $ that minimizes BER.\n\nFor binary hypothesis testing with equal priors and symmetric noise, the optimal threshold is the **midpoint between the two means**:\n\n$$\n\\gamma = \\frac{A \\cos\\phi + (-A \\cos\\phi)}{2} = 0\n$$\n\n\u2705 **Answer: The optimal threshold is $ \\gamma = 0 $**\n\n---\n\n### Why?\nEven though the signal amplitudes are scaled by $ \\cos\\phi $ due to phase offset, the **means are still symmetric about zero**, so the optimal decision boundary remains at zero. This holds as long as:\n- The prior probabilities of bits 0 and 1 are equal\n- The noise is additive white Gaussian (AWGN)\n\nThis is a key insight: **a phase offset reduces the effective signal amplitude but does not shift the decision threshold away from zero** \u2014 it only degrades SNR (since $ A \\cos\\phi < A $), increasing BER, but the threshold remains optimal at zero.\n\n---\n\n### Final Answer:\n**Threshold that minimizes BER: $ \\gamma = 0 $**",
+            "expected_value": 0.0,
+            "predicted_value": 0.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_399",
+          "question": "PCM system. f_H=5 kHz, sampled at Nyquist, quantized with n=10 bits. Find bit rate and minimum Nyquist baseband bandwidth (assume ideal, B_min=R_b/2).",
+          "expected_answer": "R_b=100 kbit/s; B_min=50 kHz",
+          "agent_answer": "We are given a Pulse Code Modulation (PCM) system with the following parameters:\n\n- Maximum frequency of the analog signal:  \n  \\( f_H = 5 \\text{ kHz} \\)\n- Sampling rate: Nyquist rate \u2192 \\( f_s = 2f_H = 10 \\text{ kHz} \\)\n- Number of bits per sample: \\( n = 10 \\)\n\n---\n\n### **1. Bit Rate (\\( R_b \\))**\n\nThe bit rate is calculated as:\n\n\\[\nR_b = f_s \\times n\n\\]\n\nSubstitute values:\n\n\\[\nR_b = 10,000 \\text{ samples/sec} \\times 10 \\text{ bits/sample} = 100,000 \\text{ bits/sec} = 100 \\text{ kbps}\n\\]\n\n\u2705 **Bit Rate = 100 kbps**\n\n---\n\n### **2. Minimum Nyquist Baseband Bandwidth (\\( B_{\\min} \\))**\n\nAssuming ideal baseband transmission (no pulse shaping or filtering effects), the minimum required bandwidth for transmitting the PCM signal is:\n\n\\[\nB_{\\min} = \\frac{R_b}{2}\n\\]\n\nThis comes from the fact that in baseband signaling, the minimum bandwidth needed to transmit a bit rate \\( R_b \\) without ISI (assuming rectangular pulses and ideal Nyquist filtering) is \\( R_b / 2 \\).\n\nSo:\n\n\\[\nB_{\\min} = \\frac{100,000}{2} = 50,000 \\text{ Hz} = 50 \\text{ kHz}\n\\]\n\n\u2705 **Minimum Nyquist Baseband Bandwidth = 50 kHz**\n\n---\n\n### \u2705 Final Answers:\n- **Bit Rate:** \\( 100 \\text{ kbps} \\)\n- **Minimum Nyquist Baseband Bandwidth:** \\( 50 \\text{ kHz} \\)",
+          "score": 1.0,
+          "answer_type": "formula",
+          "details": {
+            "answer_type": "formula",
+            "expected": "R_b=100 kbit/s; B_min=50 kHz",
+            "predicted": "We are given a Pulse Code Modulation (PCM) system with the following parameters:\n\n- Maximum frequency of the analog signal:  \n  \\( f_H = 5 \\text{ kHz} \\)\n- Sampling rate: Nyquist rate \u2192 \\( f_s = 2f_H = 10 \\text{ kHz} \\)\n- Number of bits per sample: \\( n = 10 \\)\n\n---\n\n### **1. Bit Rate (\\( R_b \\))**\n\nThe bit rate is calculated as:\n\n\\[\nR_b = f_s \\times n\n\\]\n\nSubstitute values:\n\n\\[\nR_b = 10,000 \\text{ samples/sec} \\times 10 \\text{ bits/sample} = 100,000 \\text{ bits/sec} = 100 \\text{ kbps}\n\\]\n\n\u2705 **Bit Rate = 100 kbps**\n\n---\n\n### **2. Minimum Nyquist Baseband Bandwidth (\\( B_{\\min} \\))**\n\nAssuming ideal baseband transmission (no pulse shaping or filtering effects), the minimum required bandwidth for transmitting the PCM signal is:\n\n\\[\nB_{\\min} = \\frac{R_b}{2}\n\\]\n\nThis comes from the fact that in baseband signaling, the minimum bandwidth needed to transmit a bit rate \\( R_b \\) without ISI (assuming rectangular pulses and ideal Nyquist filtering) is \\( R_b / 2 \\).\n\nSo:\n\n\\[\nB_{\\min} = \\frac{100,000}{2} = 50,000 \\text{ Hz} = 50 \\text{ kHz}\n\\]\n\n\u2705 **Minimum Nyquist Baseband Bandwidth = 50 kHz**\n\n---\n\n### \u2705 Final Answers:\n- **Bit Rate:** \\( 100 \\text{ kbps} \\)\n- **Minimum Nyquist Baseband Bandwidth:** \\( 50 \\text{ kHz} \\)",
+            "method": "numeric_extraction"
+          }
+        },
+        {
+          "problem_id": "test_891",
+          "question": "Compute maximum bit rate in 3 kHz bandpass channel using BPSK with roll-off \u03b1=1. Assume RF bandwidth B=(1+\u03b1)R_s and R_b=R_s.",
+          "expected_answer": "1500 bit/s",
+          "agent_answer": "To compute the **maximum bit rate** in a **3 kHz bandpass channel** using **BPSK (Binary Phase Shift Keying)** with a **roll-off factor \u03b1 = 1**, we follow these steps:\n\n---\n\n### Given:\n- Channel bandwidth: $ B = 3 \\text{ kHz} $\n- Modulation: BPSK\n- Roll-off factor: $ \\alpha = 1 $\n- Relationship between RF bandwidth and symbol rate:  \n  $$\n  B = (1 + \\alpha) R_s\n  $$\n- Bit rate equals symbol rate for BPSK:  \n  $$\n  R_b = R_s\n  $$\n\n---\n\n### Step 1: Solve for Symbol Rate $ R_s $\n\nFrom the bandwidth equation:\n$$\nB = (1 + \\alpha) R_s\n\\Rightarrow R_s = \\frac{B}{1 + \\alpha}\n$$\n\nPlug in values:\n$$\nR_s = \\frac{3000}{1 + 1} = \\frac{3000}{2} = 1500 \\text{ symbols/second}\n$$\n\n---\n\n### Step 2: Since BPSK maps 1 bit per symbol:\n$$\nR_b = R_s = 1500 \\text{ bits/second}\n$$\n\n---\n\n### \u2705 Final Answer:\n**Maximum bit rate = 1500 bps**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "1500 bit/s",
+            "predicted": "To compute the **maximum bit rate** in a **3 kHz bandpass channel** using **BPSK (Binary Phase Shift Keying)** with a **roll-off factor \u03b1 = 1**, we follow these steps:\n\n---\n\n### Given:\n- Channel bandwidth: $ B = 3 \\text{ kHz} $\n- Modulation: BPSK\n- Roll-off factor: $ \\alpha = 1 $\n- Relationship between RF bandwidth and symbol rate:  \n  $$\n  B = (1 + \\alpha) R_s\n  $$\n- Bit rate equals symbol rate for BPSK:  \n  $$\n  R_b = R_s\n  $$\n\n---\n\n### Step 1: Solve for Symbol Rate $ R_s $\n\nFrom the bandwidth equation:\n$$\nB = (1 + \\alpha) R_s\n\\Rightarrow R_s = \\frac{B}{1 + \\alpha}\n$$\n\nPlug in values:\n$$\nR_s = \\frac{3000}{1 + 1} = \\frac{3000}{2} = 1500 \\text{ symbols/second}\n$$\n\n---\n\n### Step 2: Since BPSK maps 1 bit per symbol:\n$$\nR_b = R_s = 1500 \\text{ bits/second}\n$$\n\n---\n\n### \u2705 Final Answer:\n**Maximum bit rate = 1500 bps**",
+            "expected_value": 1500.0,
+            "predicted_value": 1500.0,
+            "expected_unit": "bit/s",
+            "predicted_unit": "bps"
+          }
+        },
+        {
+          "problem_id": "test_489",
+          "question": "PCM: f_H=3.4 kHz, Nyquist sampling, n=8 bits. Find R_b.",
+          "expected_answer": "54.4 kbit/s",
+          "agent_answer": "To find the bit rate $ R_b $ (in bits per second), we use the formula:\n\n$$\nR_b = f_s \\times n\n$$\n\nWhere:\n- $ f_s $ is the sampling frequency (in Hz),\n- $ n $ is the number of bits per sample.\n\n---\n\n### Given:\n- $ f_H = 3.4 \\, \\text{kHz} $: This is the **maximum frequency** in the signal.\n- **Nyquist sampling**: The sampling frequency must be at least twice the highest frequency:\n  $$\n  f_s = 2 \\times f_H = 2 \\times 3.4 \\, \\text{kHz} = 6.8 \\, \\text{kHz}\n  $$\n- $ n = 8 $ bits per sample.\n\n---\n\n### Now calculate:\n$$\nR_b = f_s \\times n = 6.8 \\times 10^3 \\, \\text{Hz} \\times 8 \\, \\text{bits/sample}\n$$\n$$\nR_b = 54.4 \\times 10^3 \\, \\text{bits/second} = 54.4 \\, \\text{kbit/s}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nR_b = 54.4 \\, \\text{kbit/s}\n$$",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "54.4 kbit/s",
+            "predicted": "To find the bit rate $ R_b $ (in bits per second), we use the formula:\n\n$$\nR_b = f_s \\times n\n$$\n\nWhere:\n- $ f_s $ is the sampling frequency (in Hz),\n- $ n $ is the number of bits per sample.\n\n---\n\n### Given:\n- $ f_H = 3.4 \\, \\text{kHz} $: This is the **maximum frequency** in the signal.\n- **Nyquist sampling**: The sampling frequency must be at least twice the highest frequency:\n  $$\n  f_s = 2 \\times f_H = 2 \\times 3.4 \\, \\text{kHz} = 6.8 \\, \\text{kHz}\n  $$\n- $ n = 8 $ bits per sample.\n\n---\n\n### Now calculate:\n$$\nR_b = f_s \\times n = 6.8 \\times 10^3 \\, \\text{Hz} \\times 8 \\, \\text{bits/sample}\n$$\n$$\nR_b = 54.4 \\times 10^3 \\, \\text{bits/second} = 54.4 \\, \\text{kbit/s}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nR_b = 54.4 \\, \\text{kbit/s}\n$$",
+            "expected_value": 54400.0,
+            "predicted_value": 54400.0,
+            "expected_unit": "kbit/s",
+            "predicted_unit": "kbit/s"
+          }
+        },
+        {
+          "problem_id": "test_733",
+          "question": "A DSB-SC signal has RF bandwidth 20 kHz. What is the baseband message bandwidth W?",
+          "expected_answer": "10 kHz",
+          "agent_answer": "In Double-Sideband Suppressed Carrier (DSB-SC) modulation:\n\n- The **RF (Radio Frequency) bandwidth** is the total bandwidth of the modulated signal, which includes both the upper sideband (USB) and lower sideband (LSB).\n- For DSB-SC, the RF bandwidth is **twice** the baseband message bandwidth.\n\nGiven:\n- RF bandwidth = 20 kHz\n\nSo:\n$$\n\\text{RF bandwidth} = 2W\n$$\n$$\n20 \\text{ kHz} = 2W\n$$\n$$\nW = \\frac{20}{2} = 10 \\text{ kHz}\n$$\n\n\u2705 **Answer:** The baseband message bandwidth $ W $ is **10 kHz**.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "10 kHz",
+            "predicted": "In Double-Sideband Suppressed Carrier (DSB-SC) modulation:\n\n- The **RF (Radio Frequency) bandwidth** is the total bandwidth of the modulated signal, which includes both the upper sideband (USB) and lower sideband (LSB).\n- For DSB-SC, the RF bandwidth is **twice** the baseband message bandwidth.\n\nGiven:\n- RF bandwidth = 20 kHz\n\nSo:\n$$\n\\text{RF bandwidth} = 2W\n$$\n$$\n20 \\text{ kHz} = 2W\n$$\n$$\nW = \\frac{20}{2} = 10 \\text{ kHz}\n$$\n\n\u2705 **Answer:** The baseband message bandwidth $ W $ is **10 kHz**.",
+            "expected_value": 10000.0,
+            "predicted_value": 10000.0,
+            "expected_unit": "khz",
+            "predicted_unit": "khz"
+          }
+        },
+        {
+          "problem_id": "test_808",
+          "question": "Coherent BPSK over Rayleigh fading inversion. Find \\bar{\\gamma}_b (linear) required for average BER 10^{-2} using P_b=0.5(1-\\sqrt{\\bar{\\gamma}_b/(1+\\bar{\\gamma}_b)}).",
+          "expected_answer": "24.25",
+          "agent_answer": "We are asked to find the average signal-to-bit energy ratio $\\bar{\\gamma}_b$ (in linear scale) required for an average bit error rate (BER) of $10^{-2}$ for **coherent BPSK over Rayleigh fading** using the given BER expression:\n\n$$\nP_b = \\frac{1}{2} \\left(1 - \\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} \\right)\n$$\n\n---\n\n### Step 1: Set $P_b = 10^{-2}$\n$$\n\\frac{1}{2} \\left(1 - \\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} \\right) = 0.01\n$$\n\nMultiply both sides by 2:\n$$\n1 - \\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} = 0.02\n$$\n\nRearrange:\n$$\n\\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} = 1 - 0.02 = 0.98\n$$\n\nNow square both sides:\n$$\n\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b} = 0.98^2 = 0.9604\n$$\n\n---\n\n### Step 2: Solve for $\\bar{\\gamma}_b$\n\n$$\n\\bar{\\gamma}_b = 0.9604 (1 + \\bar{\\gamma}_b)\n$$\n\nDistribute:\n$$\n\\bar{\\gamma}_b = 0.9604 + 0.9604 \\bar{\\gamma}_b\n$$\n\nBring terms together:\n$$\n\\bar{\\gamma}_b - 0.9604 \\bar{\\gamma}_b = 0.9604\n$$\n$$\n\\bar{\\gamma}_b (1 - 0.9604) = 0.9604\n$$\n$$\n\\bar{\\gamma}_b (0.0396) = 0.9604\n$$\n\nFinally:\n$$\n\\bar{\\gamma}_b = \\frac{0.9604}{0.0396} \\approx 24.25\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\bar{\\gamma}_b \\approx 24.25 \\quad \\text{(linear scale)}\n$$\n\nThis is the average SNR per bit required to achieve an average BER of $10^{-2}$ for coherent BPSK over Rayleigh fading.",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "24.25",
+            "predicted": "We are asked to find the average signal-to-bit energy ratio $\\bar{\\gamma}_b$ (in linear scale) required for an average bit error rate (BER) of $10^{-2}$ for **coherent BPSK over Rayleigh fading** using the given BER expression:\n\n$$\nP_b = \\frac{1}{2} \\left(1 - \\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} \\right)\n$$\n\n---\n\n### Step 1: Set $P_b = 10^{-2}$\n$$\n\\frac{1}{2} \\left(1 - \\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} \\right) = 0.01\n$$\n\nMultiply both sides by 2:\n$$\n1 - \\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} = 0.02\n$$\n\nRearrange:\n$$\n\\sqrt{\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b}} = 1 - 0.02 = 0.98\n$$\n\nNow square both sides:\n$$\n\\frac{\\bar{\\gamma}_b}{1 + \\bar{\\gamma}_b} = 0.98^2 = 0.9604\n$$\n\n---\n\n### Step 2: Solve for $\\bar{\\gamma}_b$\n\n$$\n\\bar{\\gamma}_b = 0.9604 (1 + \\bar{\\gamma}_b)\n$$\n\nDistribute:\n$$\n\\bar{\\gamma}_b = 0.9604 + 0.9604 \\bar{\\gamma}_b\n$$\n\nBring terms together:\n$$\n\\bar{\\gamma}_b - 0.9604 \\bar{\\gamma}_b = 0.9604\n$$\n$$\n\\bar{\\gamma}_b (1 - 0.9604) = 0.9604\n$$\n$$\n\\bar{\\gamma}_b (0.0396) = 0.9604\n$$\n\nFinally:\n$$\n\\bar{\\gamma}_b = \\frac{0.9604}{0.0396} \\approx 24.25\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\bar{\\gamma}_b \\approx 24.25 \\quad \\text{(linear scale)}\n$$\n\nThis is the average SNR per bit required to achieve an average BER of $10^{-2}$ for coherent BPSK over Rayleigh fading.",
+            "expected_value": 24.25,
+            "predicted_value": -2.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_284",
+          "question": "For coherent BPSK, if E_b/N0=6 dB, compute Pb.",
+          "expected_answer": "2.39e-3",
+          "agent_answer": "For coherent Binary Phase Shift Keying (BPSK), the probability of bit error $ P_b $ is given by the well-known formula:\n\n$$\nP_b = Q\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right)\n$$\n\nwhere:\n- $ E_b/N_0 $ is the energy per bit to noise power spectral density ratio,\n- $ Q(x) $ is the Q-function, defined as:\n\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\n---\n\n### Given:\n$ E_b/N_0 = 6 \\, \\text{dB} $\n\nConvert from dB to linear scale:\n\n$$\n\\frac{E_b}{N_0} = 10^{6/10} = 10^{0.6} \\approx 3.981\n$$\n\nThen:\n\n$$\n\\sqrt{\\frac{2E_b}{N_0}} = \\sqrt{2 \\times 3.981} = \\sqrt{7.962} \\approx 2.822\n$$\n\nNow compute:\n\n$$\nP_b = Q(2.822)\n$$\n\nUsing standard Q-function values or a calculator:\n\n$$\nQ(2.82) \\approx 0.00238 \\quad \\text{(from Q-function tables or software like MATLAB/Python)}\n$$\n\nSo,\n\n$$\nP_b \\approx 2.38 \\times 10^{-3}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 0.00238 \\quad \\text{or} \\quad 2.38 \\times 10^{-3}\n$$\n\nThis is the bit error probability for coherent BPSK at $ E_b/N_0 = 6 \\, \\text{dB} $.",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "2.39e-3",
+            "predicted": "For coherent Binary Phase Shift Keying (BPSK), the probability of bit error $ P_b $ is given by the well-known formula:\n\n$$\nP_b = Q\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right)\n$$\n\nwhere:\n- $ E_b/N_0 $ is the energy per bit to noise power spectral density ratio,\n- $ Q(x) $ is the Q-function, defined as:\n\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\n---\n\n### Given:\n$ E_b/N_0 = 6 \\, \\text{dB} $\n\nConvert from dB to linear scale:\n\n$$\n\\frac{E_b}{N_0} = 10^{6/10} = 10^{0.6} \\approx 3.981\n$$\n\nThen:\n\n$$\n\\sqrt{\\frac{2E_b}{N_0}} = \\sqrt{2 \\times 3.981} = \\sqrt{7.962} \\approx 2.822\n$$\n\nNow compute:\n\n$$\nP_b = Q(2.822)\n$$\n\nUsing standard Q-function values or a calculator:\n\n$$\nQ(2.82) \\approx 0.00238 \\quad \\text{(from Q-function tables or software like MATLAB/Python)}\n$$\n\nSo,\n\n$$\nP_b \\approx 2.38 \\times 10^{-3}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 0.00238 \\quad \\text{or} \\quad 2.38 \\times 10^{-3}\n$$\n\nThis is the bit error probability for coherent BPSK at $ E_b/N_0 = 6 \\, \\text{dB} $.",
+            "expected_value": 0.00239,
+            "predicted_value": 6.0,
+            "expected_unit": null,
+            "predicted_unit": "db"
+          }
+        },
+        {
+          "problem_id": "test_717",
+          "question": "Antenna series inductor impedance transform. Z_in=50 - j60 \u03a9 at f=100 MHz. Add series inductor L=120 nH. Find new input impedance.",
+          "expected_answer": "50 + j15.4 \u03a9",
+          "agent_answer": "To find the new input impedance after adding a **series inductor** to the original load, we follow these steps:\n\n---\n\n### \u2705 Given:\n- Original input impedance:  \n  $$\n  Z_{\\text{in}} = 50 - j60 \\, \\Omega\n  $$\n- Frequency:  \n  $$\n  f = 100 \\, \\text{MHz} = 100 \\times 10^6 \\, \\text{Hz}\n  $$\n- Series inductor added:  \n  $$\n  L = 120 \\, \\text{nH} = 120 \\times 10^{-9} \\, \\text{H}\n  $$\n\n---\n\n### \ud83d\udd0d Step 1: Calculate inductive reactance $ X_L $\n\n$$\nX_L = \\omega L = 2\\pi f L\n$$\n\nPlug in values:\n\n$$\nX_L = 2\\pi (100 \\times 10^6) (120 \\times 10^{-9}) \n= 2\\pi \\cdot 12 = 24\\pi \\approx 75.4 \\, \\Omega\n$$\n\nSo, the inductor adds an **inductive reactance of +j75.4 \u03a9**.\n\n---\n\n### \ud83e\uddee Step 2: Add series inductor to original impedance\n\nSince it's a **series** inductor, we add its reactance directly to the original impedance:\n\n$$\nZ_{\\text{new}} = Z_{\\text{in}} + jX_L = (50 - j60) + j75.4\n$$\n\n$$\nZ_{\\text{new}} = 50 + j(75.4 - 60) = 50 + j15.4 \\, \\Omega\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\boxed{Z_{\\text{new}} = 50 + j15.4 \\, \\Omega}\n$$\n\nThis is the new input impedance after adding the 120 nH series inductor at 100 MHz.",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "50 + j15.4 \u03a9",
+            "predicted": "To find the new input impedance after adding a **series inductor** to the original load, we follow these steps:\n\n---\n\n### \u2705 Given:\n- Original input impedance:  \n  $$\n  Z_{\\text{in}} = 50 - j60 \\, \\Omega\n  $$\n- Frequency:  \n  $$\n  f = 100 \\, \\text{MHz} = 100 \\times 10^6 \\, \\text{Hz}\n  $$\n- Series inductor added:  \n  $$\n  L = 120 \\, \\text{nH} = 120 \\times 10^{-9} \\, \\text{H}\n  $$\n\n---\n\n### \ud83d\udd0d Step 1: Calculate inductive reactance $ X_L $\n\n$$\nX_L = \\omega L = 2\\pi f L\n$$\n\nPlug in values:\n\n$$\nX_L = 2\\pi (100 \\times 10^6) (120 \\times 10^{-9}) \n= 2\\pi \\cdot 12 = 24\\pi \\approx 75.4 \\, \\Omega\n$$\n\nSo, the inductor adds an **inductive reactance of +j75.4 \u03a9**.\n\n---\n\n### \ud83e\uddee Step 2: Add series inductor to original impedance\n\nSince it's a **series** inductor, we add its reactance directly to the original impedance:\n\n$$\nZ_{\\text{new}} = Z_{\\text{in}} + jX_L = (50 - j60) + j75.4\n$$\n\n$$\nZ_{\\text{new}} = 50 + j(75.4 - 60) = 50 + j15.4 \\, \\Omega\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\boxed{Z_{\\text{new}} = 50 + j15.4 \\, \\Omega}\n$$\n\nThis is the new input impedance after adding the 120 nH series inductor at 100 MHz.",
+            "expected_value": 15.4,
+            "predicted_value": 100000000.0,
+            "expected_unit": null,
+            "predicted_unit": "mhz"
+          }
+        },
+        {
+          "problem_id": "test_618",
+          "question": "Using Carson\u2019s rule, an FM system has f_m=4 kHz and modulation index \u03b2=3. Find approximate bandwidth B_FM.",
+          "expected_answer": "32 kHz",
+          "agent_answer": "To find the approximate bandwidth of an FM signal using **Carson\u2019s rule**, we use the formula:\n\n$$\nB_{FM} \\approx 2(\\beta + 1)f_m\n$$\n\nWhere:\n- $ \\beta $ is the modulation index (given as 3),\n- $ f_m $ is the maximum frequency of the modulating signal (given as 4 kHz).\n\n### Plug in the values:\n$$\nB_{FM} \\approx 2(3 + 1) \\times 4\\ \\text{kHz}\n= 2 \\times 4 \\times 4\\ \\text{kHz}\n= 32\\ \\text{kHz}\n$$\n\n### \u2705 Final Answer:\n**32 kHz**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "32 kHz",
+            "predicted": "To find the approximate bandwidth of an FM signal using **Carson\u2019s rule**, we use the formula:\n\n$$\nB_{FM} \\approx 2(\\beta + 1)f_m\n$$\n\nWhere:\n- $ \\beta $ is the modulation index (given as 3),\n- $ f_m $ is the maximum frequency of the modulating signal (given as 4 kHz).\n\n### Plug in the values:\n$$\nB_{FM} \\approx 2(3 + 1) \\times 4\\ \\text{kHz}\n= 2 \\times 4 \\times 4\\ \\text{kHz}\n= 32\\ \\text{kHz}\n$$\n\n### \u2705 Final Answer:\n**32 kHz**",
+            "expected_value": 32000.0,
+            "predicted_value": 32000.0,
+            "expected_unit": "khz",
+            "predicted_unit": "khz"
+          }
+        },
+        {
+          "problem_id": "test_276",
+          "question": "Convert SNR=7 to dB.",
+          "expected_answer": "8.45 dB",
+          "agent_answer": "To convert a signal-to-noise ratio (SNR) from a linear scale to decibels (dB), you use the formula:\n\n$$\n\\text{SNR (dB)} = 10 \\cdot \\log_{10}(\\text{SNR})\n$$\n\nGiven:\n$$\n\\text{SNR} = 7\n$$\n\nNow calculate:\n\n$$\n\\text{SNR (dB)} = 10 \\cdot \\log_{10}(7) \\approx 10 \\cdot 0.8451 = 8.451 \\, \\text{dB}\n$$\n\n\u2705 Final Answer: **8.45 dB**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "8.45 dB",
+            "predicted": "To convert a signal-to-noise ratio (SNR) from a linear scale to decibels (dB), you use the formula:\n\n$$\n\\text{SNR (dB)} = 10 \\cdot \\log_{10}(\\text{SNR})\n$$\n\nGiven:\n$$\n\\text{SNR} = 7\n$$\n\nNow calculate:\n\n$$\n\\text{SNR (dB)} = 10 \\cdot \\log_{10}(7) \\approx 10 \\cdot 0.8451 = 8.451 \\, \\text{dB}\n$$\n\n\u2705 Final Answer: **8.45 dB**",
+            "expected_value": 8.45,
+            "predicted_value": 8.45,
+            "expected_unit": "db",
+            "predicted_unit": "db"
+          }
+        },
+        {
+          "problem_id": "test_773",
+          "question": "A binary raised-cosine link fits into B=100 kHz with \u03b1=1. Find max bit rate.",
+          "expected_answer": "100 kbit/s",
+          "agent_answer": "To find the **maximum bit rate** for a binary raised-cosine link with:\n\n- Bandwidth $ B = 100 \\, \\text{kHz} $\n- Roll-off factor $ \\alpha = 1 $\n\nWe use the formula for the **symbol rate (baud rate)** of a raised-cosine filter:\n\n$$\nR_s = \\frac{B}{1 + \\alpha}\n$$\n\nSince it's a **binary** system, each symbol carries 1 bit \u2192 bit rate $ R_b = R_s $.\n\n### Step-by-step:\nGiven:\n- $ B = 100 \\, \\text{kHz} $\n- $ \\alpha = 1 $\n\nPlug into the formula:\n\n$$\nR_s = \\frac{100 \\, \\text{kHz}}{1 + 1} = \\frac{100}{2} = 50 \\, \\text{kHz}\n$$\n\nSo, the **maximum bit rate** is:\n\n$$\n\\boxed{50 \\, \\text{kbps}}\n$$\n\n\u2705 This is the highest possible bit rate for a binary raised-cosine pulse with full roll-off ($\\alpha = 1$) in a 100 kHz bandwidth.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "100 kbit/s",
+            "predicted": "To find the **maximum bit rate** for a binary raised-cosine link with:\n\n- Bandwidth $ B = 100 \\, \\text{kHz} $\n- Roll-off factor $ \\alpha = 1 $\n\nWe use the formula for the **symbol rate (baud rate)** of a raised-cosine filter:\n\n$$\nR_s = \\frac{B}{1 + \\alpha}\n$$\n\nSince it's a **binary** system, each symbol carries 1 bit \u2192 bit rate $ R_b = R_s $.\n\n### Step-by-step:\nGiven:\n- $ B = 100 \\, \\text{kHz} $\n- $ \\alpha = 1 $\n\nPlug into the formula:\n\n$$\nR_s = \\frac{100 \\, \\text{kHz}}{1 + 1} = \\frac{100}{2} = 50 \\, \\text{kHz}\n$$\n\nSo, the **maximum bit rate** is:\n\n$$\n\\boxed{50 \\, \\text{kbps}}\n$$\n\n\u2705 This is the highest possible bit rate for a binary raised-cosine pulse with full roll-off ($\\alpha = 1$) in a 100 kHz bandwidth.",
+            "expected_value": 100000.0,
+            "predicted_value": 100000.0,
+            "expected_unit": "kbit/s",
+            "predicted_unit": "khz"
+          }
+        },
+        {
+          "problem_id": "test_6",
+          "question": "Convert 30 dBm to watts.",
+          "expected_answer": "1.00 W",
+          "agent_answer": "To convert decibels relative to one milliwatt (dBm) to watts:\n\n$$\nP_{\\text{watts}} = 10^{\\frac{P_{\\text{dBm}}}{10}} \\times 10^{-3}\n$$\n\nFor **30 dBm**:\n\n$$\nP = 10^{\\frac{30}{10}} \\times 10^{-3} = 10^3 \\times 10^{-3} = 1 \\, \\text{watt}\n$$\n\n\u2705 **Answer: 30 dBm = 1 watt**.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "1.00 W",
+            "predicted": "To convert decibels relative to one milliwatt (dBm) to watts:\n\n$$\nP_{\\text{watts}} = 10^{\\frac{P_{\\text{dBm}}}{10}} \\times 10^{-3}\n$$\n\nFor **30 dBm**:\n\n$$\nP = 10^{\\frac{30}{10}} \\times 10^{-3} = 10^3 \\times 10^{-3} = 1 \\, \\text{watt}\n$$\n\n\u2705 **Answer: 30 dBm = 1 watt**.",
+            "expected_value": 1.0,
+            "predicted_value": 1.0,
+            "expected_unit": "w",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_14",
+          "question": "Spectral efficiency for M-PSK with raised-cosine roll-off \u03b1=0.25. Compute \u03b7_b = log2(M)/(1+\u03b1) for 8PSK.",
+          "expected_answer": "2.40 bit/s/Hz",
+          "agent_answer": "To compute the **spectral efficiency** $ \\eta_b $ for **8-PSK** with a **raised-cosine roll-off factor $ \\alpha = 0.25 $**, we use the formula:\n\n$$\n\\eta_b = \\frac{\\log_2(M)}{1 + \\alpha}\n$$\n\n### Given:\n- $ M = 8 $ (for 8-PSK)\n- $ \\alpha = 0.25 $\n\n### Step-by-step:\n1. Compute $ \\log_2(8) $:\n   $$\n   \\log_2(8) = 3 \\quad \\text{(since } 2^3 = 8\\text{)}\n   $$\n\n2. Plug into the formula:\n   $$\n   \\eta_b = \\frac{3}{1 + 0.25} = \\frac{3}{1.25}\n   $$\n\n3. Simplify:\n   $$\n   \\eta_b = 2.4 \\, \\text{bits/s/Hz}\n   $$\n\n### \u2705 Final Answer:\n$$\n\\eta_b = 2.4 \\, \\text{bits/s/Hz}\n$$",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "2.40 bit/s/Hz",
+            "predicted": "To compute the **spectral efficiency** $ \\eta_b $ for **8-PSK** with a **raised-cosine roll-off factor $ \\alpha = 0.25 $**, we use the formula:\n\n$$\n\\eta_b = \\frac{\\log_2(M)}{1 + \\alpha}\n$$\n\n### Given:\n- $ M = 8 $ (for 8-PSK)\n- $ \\alpha = 0.25 $\n\n### Step-by-step:\n1. Compute $ \\log_2(8) $:\n   $$\n   \\log_2(8) = 3 \\quad \\text{(since } 2^3 = 8\\text{)}\n   $$\n\n2. Plug into the formula:\n   $$\n   \\eta_b = \\frac{3}{1 + 0.25} = \\frac{3}{1.25}\n   $$\n\n3. Simplify:\n   $$\n   \\eta_b = 2.4 \\, \\text{bits/s/Hz}\n   $$\n\n### \u2705 Final Answer:\n$$\n\\eta_b = 2.4 \\, \\text{bits/s/Hz}\n$$",
+            "expected_value": 2.4,
+            "predicted_value": 2.4,
+            "expected_unit": "bit/s/hz",
+            "predicted_unit": "bits/s"
+          }
+        },
+        {
+          "problem_id": "test_94",
+          "question": "Noncoherent orthogonal 2FSK over AWGN. Given E_b/N_0=6 dB, compute P_b=0.5 exp(-\\gamma_b/2).",
+          "expected_answer": "6.80e-2",
+          "agent_answer": "We are given a **noncoherent orthogonal 2FSK** system over an **AWGN channel**, with:\n\n- $ E_b/N_0 = 6 \\, \\text{dB} $\n- The bit error probability is approximated by:  \n  $$\n  P_b = 0.5 \\exp\\left(-\\frac{\\gamma_b}{2}\\right)\n  $$\n\nHere, $ \\gamma_b = E_b / N_0 $, which is the **bit energy-to-noise ratio** in linear scale (not dB).\n\n---\n\n### Step 1: Convert $ E_b/N_0 $ from dB to linear scale\n$$\n\\gamma_b = 10^{(6/10)} = 10^{0.6} \\approx 3.981\n$$\n\n---\n\n### Step 2: Plug into the formula\n$$\nP_b = 0.5 \\cdot \\exp\\left(-\\frac{3.981}{2}\\right) = 0.5 \\cdot \\exp(-1.9905)\n$$\n\nNow compute:\n$$\n\\exp(-1.9905) \\approx \\frac{1}{e^{1.9905}} \\approx \\frac{1}{7.314} \\approx 0.1367\n$$\n\nSo:\n$$\nP_b \\approx 0.5 \\times 0.1367 = 0.06835\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 0.0684\n$$\n\nThis is the approximate bit error probability for noncoherent orthogonal 2FSK at $ E_b/N_0 = 6 \\, \\text{dB} $.",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "6.80e-2",
+            "predicted": "We are given a **noncoherent orthogonal 2FSK** system over an **AWGN channel**, with:\n\n- $ E_b/N_0 = 6 \\, \\text{dB} $\n- The bit error probability is approximated by:  \n  $$\n  P_b = 0.5 \\exp\\left(-\\frac{\\gamma_b}{2}\\right)\n  $$\n\nHere, $ \\gamma_b = E_b / N_0 $, which is the **bit energy-to-noise ratio** in linear scale (not dB).\n\n---\n\n### Step 1: Convert $ E_b/N_0 $ from dB to linear scale\n$$\n\\gamma_b = 10^{(6/10)} = 10^{0.6} \\approx 3.981\n$$\n\n---\n\n### Step 2: Plug into the formula\n$$\nP_b = 0.5 \\cdot \\exp\\left(-\\frac{3.981}{2}\\right) = 0.5 \\cdot \\exp(-1.9905)\n$$\n\nNow compute:\n$$\n\\exp(-1.9905) \\approx \\frac{1}{e^{1.9905}} \\approx \\frac{1}{7.314} \\approx 0.1367\n$$\n\nSo:\n$$\nP_b \\approx 0.5 \\times 0.1367 = 0.06835\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 0.0684\n$$\n\nThis is the approximate bit error probability for noncoherent orthogonal 2FSK at $ E_b/N_0 = 6 \\, \\text{dB} $.",
+            "expected_value": 0.068,
+            "predicted_value": 6.0,
+            "expected_unit": null,
+            "predicted_unit": "db"
+          }
+        },
+        {
+          "problem_id": "test_462",
+          "question": "Compute baseband bandwidth for QPSK. Bit rate R_b=6 Mbit/s, roll-off \u03b1=0.5. Assume baseband one-sided bandwidth B=(1+\u03b1)R_s/2 and R_s=R_b/2. Find B (MHz).",
+          "expected_answer": "2.25 MHz",
+          "agent_answer": "To compute the **baseband bandwidth** for QPSK, we follow these steps:\n\n---\n\n### Given:\n- Bit rate:  \n  $ R_b = 6 \\, \\text{Mbit/s} $\n- Roll-off factor:  \n  $ \\alpha = 0.5 $\n- For QPSK:  \n  Symbol rate $ R_s = \\frac{R_b}{2} $ (since each symbol carries 2 bits)\n- Baseband one-sided bandwidth:  \n  $ B = \\frac{(1 + \\alpha) R_s}{2} $\n\n---\n\n### Step 1: Compute Symbol Rate $ R_s $\n$$\nR_s = \\frac{R_b}{2} = \\frac{6}{2} = 3 \\, \\text{Msymbols/s}\n$$\n\n---\n\n### Step 2: Compute Baseband Bandwidth $ B $\n$$\nB = \\frac{(1 + \\alpha) R_s}{2} = \\frac{(1 + 0.5) \\times 3}{2} = \\frac{1.5 \\times 3}{2} = \\frac{4.5}{2} = 2.25 \\, \\text{MHz}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nB = 2.25 \\, \\text{MHz}\n$$",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "2.25 MHz",
+            "predicted": "To compute the **baseband bandwidth** for QPSK, we follow these steps:\n\n---\n\n### Given:\n- Bit rate:  \n  $ R_b = 6 \\, \\text{Mbit/s} $\n- Roll-off factor:  \n  $ \\alpha = 0.5 $\n- For QPSK:  \n  Symbol rate $ R_s = \\frac{R_b}{2} $ (since each symbol carries 2 bits)\n- Baseband one-sided bandwidth:  \n  $ B = \\frac{(1 + \\alpha) R_s}{2} $\n\n---\n\n### Step 1: Compute Symbol Rate $ R_s $\n$$\nR_s = \\frac{R_b}{2} = \\frac{6}{2} = 3 \\, \\text{Msymbols/s}\n$$\n\n---\n\n### Step 2: Compute Baseband Bandwidth $ B $\n$$\nB = \\frac{(1 + \\alpha) R_s}{2} = \\frac{(1 + 0.5) \\times 3}{2} = \\frac{1.5 \\times 3}{2} = \\frac{4.5}{2} = 2.25 \\, \\text{MHz}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nB = 2.25 \\, \\text{MHz}\n$$",
+            "expected_value": 2250000.0,
+            "predicted_value": 2250000.0,
+            "expected_unit": "mhz",
+            "predicted_unit": "mhz"
+          }
+        },
+        {
+          "problem_id": "test_367",
+          "question": "Compute required SNR for capacity. If B=3.4 kHz and desired C=20 kbit/s, find required SNR (dB).",
+          "expected_answer": "17.6 dB",
+          "agent_answer": "To compute the required Signal-to-Noise Ratio (SNR) in dB for a given channel capacity, we use **Shannon's Channel Capacity Formula**:\n\n\\[\nC = B \\log_2(1 + \\text{SNR})\n\\]\n\nWhere:\n- \\( C \\) = channel capacity in bits per second (bit/s)\n- \\( B \\) = bandwidth in Hz\n- SNR = signal-to-noise ratio (linear, not in dB)\n\n---\n\n### Given:\n- \\( C = 20 \\times 10^3 \\) bit/s = 20,000 bit/s  \n- \\( B = 3.4 \\times 10^3 \\) Hz = 3,400 Hz\n\nWe solve for SNR:\n\n\\[\n20,000 = 3,400 \\cdot \\log_2(1 + \\text{SNR})\n\\]\n\nDivide both sides by 3,400:\n\n\\[\n\\frac{20,000}{3,400} = \\log_2(1 + \\text{SNR})\n\\]\n\\[\n5.8824 \\approx \\log_2(1 + \\text{SNR})\n\\]\n\nConvert from base 2 to base 10 (or use exponentiation):\n\n\\[\n1 + \\text{SNR} = 2^{5.8824}\n\\]\n\nCalculate \\( 2^{5.8824} \\):\n\n\\[\n2^{5.8824} \\approx 56.79\n\\]\n\nSo:\n\n\\[\n\\text{SNR} \\approx 56.79 - 1 = 55.79 \\quad (\\text{linear})\n\\]\n\nNow convert to dB:\n\n\\[\n\\text{SNR}_{\\text{dB}} = 10 \\log_{10}(55.79) \\approx 10 \\times 1.746 = 17.46 \\, \\text{dB}\n\\]\n\n---\n\n### \u2705 Final Answer:\n**Required SNR \u2248 17.46 dB**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "17.6 dB",
+            "predicted": "To compute the required Signal-to-Noise Ratio (SNR) in dB for a given channel capacity, we use **Shannon's Channel Capacity Formula**:\n\n\\[\nC = B \\log_2(1 + \\text{SNR})\n\\]\n\nWhere:\n- \\( C \\) = channel capacity in bits per second (bit/s)\n- \\( B \\) = bandwidth in Hz\n- SNR = signal-to-noise ratio (linear, not in dB)\n\n---\n\n### Given:\n- \\( C = 20 \\times 10^3 \\) bit/s = 20,000 bit/s  \n- \\( B = 3.4 \\times 10^3 \\) Hz = 3,400 Hz\n\nWe solve for SNR:\n\n\\[\n20,000 = 3,400 \\cdot \\log_2(1 + \\text{SNR})\n\\]\n\nDivide both sides by 3,400:\n\n\\[\n\\frac{20,000}{3,400} = \\log_2(1 + \\text{SNR})\n\\]\n\\[\n5.8824 \\approx \\log_2(1 + \\text{SNR})\n\\]\n\nConvert from base 2 to base 10 (or use exponentiation):\n\n\\[\n1 + \\text{SNR} = 2^{5.8824}\n\\]\n\nCalculate \\( 2^{5.8824} \\):\n\n\\[\n2^{5.8824} \\approx 56.79\n\\]\n\nSo:\n\n\\[\n\\text{SNR} \\approx 56.79 - 1 = 55.79 \\quad (\\text{linear})\n\\]\n\nNow convert to dB:\n\n\\[\n\\text{SNR}_{\\text{dB}} = 10 \\log_{10}(55.79) \\approx 10 \\times 1.746 = 17.46 \\, \\text{dB}\n\\]\n\n---\n\n### \u2705 Final Answer:\n**Required SNR \u2248 17.46 dB**",
+            "expected_value": 17.6,
+            "predicted_value": 17.46,
+            "expected_unit": "db",
+            "predicted_unit": "db"
+          }
+        },
+        {
+          "problem_id": "test_35",
+          "question": "Compute frequency spacing for independence. If coherence bandwidth B_c=100 kHz, what spacing is needed?",
+          "expected_answer": "\u2265100 kHz",
+          "agent_answer": "To compute the **frequency spacing for independence**, we use the relationship between **coherence bandwidth** $ B_c $ and the **frequency spacing** $ \\Delta f $ required to ensure that two frequency components are approximately uncorrelated (i.e., independent).\n\n### Key Concept:\n- If two frequencies are separated by more than the coherence bandwidth $ B_c $, their channel responses become **uncorrelated**.\n- Therefore, to ensure **independence** (or at least decorrelation), the frequency spacing should be **greater than or equal to** the coherence bandwidth.\n\n### Given:\n- Coherence bandwidth $ B_c = 100 \\text{ kHz} $\n\n### Required Frequency Spacing:\n$$\n\\Delta f \\geq B_c = 100 \\text{ kHz}\n$$\n\n### Final Answer:\n**100 kHz**\n\nThis means you need a frequency spacing of **at least 100 kHz** to ensure independence between frequency components in the channel.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "\u2265100 kHz",
+            "predicted": "To compute the **frequency spacing for independence**, we use the relationship between **coherence bandwidth** $ B_c $ and the **frequency spacing** $ \\Delta f $ required to ensure that two frequency components are approximately uncorrelated (i.e., independent).\n\n### Key Concept:\n- If two frequencies are separated by more than the coherence bandwidth $ B_c $, their channel responses become **uncorrelated**.\n- Therefore, to ensure **independence** (or at least decorrelation), the frequency spacing should be **greater than or equal to** the coherence bandwidth.\n\n### Given:\n- Coherence bandwidth $ B_c = 100 \\text{ kHz} $\n\n### Required Frequency Spacing:\n$$\n\\Delta f \\geq B_c = 100 \\text{ kHz}\n$$\n\n### Final Answer:\n**100 kHz**\n\nThis means you need a frequency spacing of **at least 100 kHz** to ensure independence between frequency components in the channel.",
+            "expected_value": 100000.0,
+            "predicted_value": 100000.0,
+            "expected_unit": "khz",
+            "predicted_unit": "khz"
+          }
+        },
+        {
+          "problem_id": "test_761",
+          "question": "Compute BER union bound for 16-QAM in terms of d_min and N0: p_b\u2248(3/4)Q(\\sqrt{d_min^2/(2N0)}). With d_min=2 and N0=1, compute p_b.",
+          "expected_answer": "0.118",
+          "agent_answer": "We are given the union bound approximation for the Bit Error Rate (BER) for 16-QAM:\n\n$$\np_b \\approx \\frac{3}{4} Q\\left( \\sqrt{\\frac{d_{\\text{min}}^2}{2N_0}} \\right)\n$$\n\nwith:\n- $ d_{\\text{min}} = 2 $\n- $ N_0 = 1 $\n\n---\n\n### Step 1: Plug in the values\n\n$$\np_b \\approx \\frac{3}{4} Q\\left( \\sqrt{\\frac{2^2}{2 \\cdot 1}} \\right) = \\frac{3}{4} Q\\left( \\sqrt{\\frac{4}{2}} \\right) = \\frac{3}{4} Q\\left( \\sqrt{2} \\right)\n$$\n\nSo we need to compute:\n$$\np_b \\approx \\frac{3}{4} Q(\\sqrt{2})\n$$\n\n---\n\n### Step 2: Evaluate $ Q(\\sqrt{2}) $\n\nThe Q-function is defined as:\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\nNumerically, $ \\sqrt{2} \\approx 1.4142 $\n\nUsing a standard Q-function table or calculator:\n$$\nQ(1.4142) \\approx 0.0786\n$$\n\n(You can verify this using Python, MATLAB, or a scientific calculator.)\n\n---\n\n### Step 3: Multiply by 3/4\n\n$$\np_b \\approx \\frac{3}{4} \\times 0.0786 = 0.05895\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\np_b \\approx 0.059\n$$\n\nSo, the approximate bit error rate is **0.059** (or 5.9%).",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.118",
+            "predicted": "We are given the union bound approximation for the Bit Error Rate (BER) for 16-QAM:\n\n$$\np_b \\approx \\frac{3}{4} Q\\left( \\sqrt{\\frac{d_{\\text{min}}^2}{2N_0}} \\right)\n$$\n\nwith:\n- $ d_{\\text{min}} = 2 $\n- $ N_0 = 1 $\n\n---\n\n### Step 1: Plug in the values\n\n$$\np_b \\approx \\frac{3}{4} Q\\left( \\sqrt{\\frac{2^2}{2 \\cdot 1}} \\right) = \\frac{3}{4} Q\\left( \\sqrt{\\frac{4}{2}} \\right) = \\frac{3}{4} Q\\left( \\sqrt{2} \\right)\n$$\n\nSo we need to compute:\n$$\np_b \\approx \\frac{3}{4} Q(\\sqrt{2})\n$$\n\n---\n\n### Step 2: Evaluate $ Q(\\sqrt{2}) $\n\nThe Q-function is defined as:\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\nNumerically, $ \\sqrt{2} \\approx 1.4142 $\n\nUsing a standard Q-function table or calculator:\n$$\nQ(1.4142) \\approx 0.0786\n$$\n\n(You can verify this using Python, MATLAB, or a scientific calculator.)\n\n---\n\n### Step 3: Multiply by 3/4\n\n$$\np_b \\approx \\frac{3}{4} \\times 0.0786 = 0.05895\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\np_b \\approx 0.059\n$$\n\nSo, the approximate bit error rate is **0.059** (or 5.9%).",
+            "expected_value": 0.118,
+            "predicted_value": 5.9,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_484",
+          "question": "PM: if maximum phase deviation is 5 rad and k_p=1 rad/V, find max message amplitude.",
+          "expected_answer": "5 V",
+          "agent_answer": "To find the **maximum message amplitude** given:\n\n- Maximum phase deviation, $ \\Delta \\phi_{\\text{max}} = 5 $ rad  \n- Phase sensitivity, $ k_p = 1 $ rad/V  \n\nWe use the relationship for **phase modulation (PM)**:\n\n$$\n\\Delta \\phi(t) = k_p \\cdot m(t)\n$$\n\nWhere:\n- $ \\Delta \\phi(t) $ is the instantaneous phase deviation,\n- $ m(t) $ is the message signal,\n- $ k_p $ is the phase sensitivity (rad/V).\n\nThe **maximum phase deviation** occurs when the message amplitude is at its peak:\n\n$$\n\\Delta \\phi_{\\text{max}} = k_p \\cdot A_m\n$$\n\nSolving for the maximum message amplitude $ A_m $:\n\n$$\nA_m = \\frac{\\Delta \\phi_{\\text{max}}}{k_p} = \\frac{5\\ \\text{rad}}{1\\ \\text{rad/V}} = 5\\ \\text{V}\n$$\n\n\u2705 **Answer:** The maximum message amplitude is **5 volts**.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "5 V",
+            "predicted": "To find the **maximum message amplitude** given:\n\n- Maximum phase deviation, $ \\Delta \\phi_{\\text{max}} = 5 $ rad  \n- Phase sensitivity, $ k_p = 1 $ rad/V  \n\nWe use the relationship for **phase modulation (PM)**:\n\n$$\n\\Delta \\phi(t) = k_p \\cdot m(t)\n$$\n\nWhere:\n- $ \\Delta \\phi(t) $ is the instantaneous phase deviation,\n- $ m(t) $ is the message signal,\n- $ k_p $ is the phase sensitivity (rad/V).\n\nThe **maximum phase deviation** occurs when the message amplitude is at its peak:\n\n$$\n\\Delta \\phi_{\\text{max}} = k_p \\cdot A_m\n$$\n\nSolving for the maximum message amplitude $ A_m $:\n\n$$\nA_m = \\frac{\\Delta \\phi_{\\text{max}}}{k_p} = \\frac{5\\ \\text{rad}}{1\\ \\text{rad/V}} = 5\\ \\text{V}\n$$\n\n\u2705 **Answer:** The maximum message amplitude is **5 volts**.",
+            "expected_value": 5.0,
+            "predicted_value": 5.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_5",
+          "question": "Two-ray critical distance. f_c=900 MHz, h_t=10 m, h_r=2 m. Compute d_c=4h_t h_r/\u03bb.",
+          "expected_answer": "240 m",
+          "agent_answer": "To compute the **two-ray critical distance** \\( d_c \\), we use the formula:\n\n\\[\nd_c = \\frac{4 h_t h_r}{\\lambda}\n\\]\n\nwhere:\n- \\( h_t = 10 \\, \\text{m} \\) (transmit height),\n- \\( h_r = 2 \\, \\text{m} \\) (receive height),\n- \\( \\lambda \\) is the wavelength of the signal.\n\n---\n\n### Step 1: Compute the wavelength \\( \\lambda \\)\n\nGiven frequency \\( f_c = 900 \\, \\text{MHz} = 9 \\times 10^8 \\, \\text{Hz} \\),\n\nThe speed of light \\( c = 3 \\times 10^8 \\, \\text{m/s} \\), so:\n\n\\[\n\\lambda = \\frac{c}{f_c} = \\frac{3 \\times 10^8}{9 \\times 10^8} = \\frac{1}{3} \\, \\text{m} = 0.333\\ldots \\, \\text{m}\n\\]\n\n---\n\n### Step 2: Plug into the formula\n\n\\[\nd_c = \\frac{4 \\times 10 \\times 2}{\\lambda} = \\frac{80}{1/3} = 80 \\times 3 = 240 \\, \\text{m}\n\\]\n\n---\n\n### \u2705 Final Answer:\n\\[\n\\boxed{240} \\, \\text{meters}\n\\]",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "240 m",
+            "predicted": "To compute the **two-ray critical distance** \\( d_c \\), we use the formula:\n\n\\[\nd_c = \\frac{4 h_t h_r}{\\lambda}\n\\]\n\nwhere:\n- \\( h_t = 10 \\, \\text{m} \\) (transmit height),\n- \\( h_r = 2 \\, \\text{m} \\) (receive height),\n- \\( \\lambda \\) is the wavelength of the signal.\n\n---\n\n### Step 1: Compute the wavelength \\( \\lambda \\)\n\nGiven frequency \\( f_c = 900 \\, \\text{MHz} = 9 \\times 10^8 \\, \\text{Hz} \\),\n\nThe speed of light \\( c = 3 \\times 10^8 \\, \\text{m/s} \\), so:\n\n\\[\n\\lambda = \\frac{c}{f_c} = \\frac{3 \\times 10^8}{9 \\times 10^8} = \\frac{1}{3} \\, \\text{m} = 0.333\\ldots \\, \\text{m}\n\\]\n\n---\n\n### Step 2: Plug into the formula\n\n\\[\nd_c = \\frac{4 \\times 10 \\times 2}{\\lambda} = \\frac{80}{1/3} = 80 \\times 3 = 240 \\, \\text{m}\n\\]\n\n---\n\n### \u2705 Final Answer:\n\\[\n\\boxed{240} \\, \\text{meters}\n\\]",
+            "expected_value": 240.0,
+            "predicted_value": 240.0,
+            "expected_unit": "m",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_682",
+          "question": "Using E_b/N_0=10, compute coherent orthogonal BFSK BER P_b=Q(\\sqrt{E_b/N_0}).",
+          "expected_answer": "7.83e-4",
+          "agent_answer": "To compute the Bit Error Rate (BER) for **coherent orthogonal Binary Frequency Shift Keying (BFSK)** using the given formula:\n\n$$\nP_b = Q\\left(\\sqrt{\\frac{E_b}{N_0}}\\right)\n$$\n\nand given:\n\n$$\n\\frac{E_b}{N_0} = 10 \\, \\text{(in linear scale)}\n$$\n\n---\n\n### Step 1: Compute the argument of the Q-function\n$$\n\\sqrt{\\frac{E_b}{N_0}} = \\sqrt{10} \\approx 3.1623\n$$\n\n---\n\n### Step 2: Evaluate the Q-function at 3.1623\n\nThe Q-function is defined as:\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\nThis can be computed numerically or using standard approximations or lookup tables.\n\nUsing a calculator or Python (`scipy.stats.norm.cdf`):\n\n$$\nQ(3.1623) \\approx 1 - \\Phi(3.1623)\n$$\n\nWhere $\\Phi(x)$ is the standard normal CDF.\n\nFrom standard tables or computation:\n$$\nQ(3.1623) \\approx 7.865 \\times 10^{-4}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 7.87 \\times 10^{-4}\n$$\n\nSo, the BER for coherent orthogonal BFSK with $E_b/N_0 = 10$ is approximately **0.000787** or **0.0787%**.",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "7.83e-4",
+            "predicted": "To compute the Bit Error Rate (BER) for **coherent orthogonal Binary Frequency Shift Keying (BFSK)** using the given formula:\n\n$$\nP_b = Q\\left(\\sqrt{\\frac{E_b}{N_0}}\\right)\n$$\n\nand given:\n\n$$\n\\frac{E_b}{N_0} = 10 \\, \\text{(in linear scale)}\n$$\n\n---\n\n### Step 1: Compute the argument of the Q-function\n$$\n\\sqrt{\\frac{E_b}{N_0}} = \\sqrt{10} \\approx 3.1623\n$$\n\n---\n\n### Step 2: Evaluate the Q-function at 3.1623\n\nThe Q-function is defined as:\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\nThis can be computed numerically or using standard approximations or lookup tables.\n\nUsing a calculator or Python (`scipy.stats.norm.cdf`):\n\n$$\nQ(3.1623) \\approx 1 - \\Phi(3.1623)\n$$\n\nWhere $\\Phi(x)$ is the standard normal CDF.\n\nFrom standard tables or computation:\n$$\nQ(3.1623) \\approx 7.865 \\times 10^{-4}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 7.87 \\times 10^{-4}\n$$\n\nSo, the BER for coherent orthogonal BFSK with $E_b/N_0 = 10$ is approximately **0.000787** or **0.0787%**.",
+            "expected_value": 0.0007830000000000001,
+            "predicted_value": 0.0787,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_728",
+          "question": "A PCM system uses uniform quantization step \\(\\Delta=\\tfrac{1}{32}\\,\\text{V}\\) over amplitude range -2 V to 2 V and sampling rate f_s=10 kHz. Using \\(L=\\text{range}/\\Delta\\), find the bits per sample n and the resulting PCM bit rate R_b.",
+          "expected_answer": "n=7, R_b=70 kbit/s",
+          "agent_answer": "We are given:\n\n- Uniform quantization step:  \n  $$ \\Delta = \\frac{1}{32} \\, \\text{V} $$\n- Amplitude range:  \n  From $-2$ V to $+2$ V \u2192 total range = $4$ V\n- Sampling rate:  \n  $ f_s = 10 \\, \\text{kHz} $\n\n---\n\n### Step 1: Find the number of quantization levels $L$\n\nUsing the formula:\n$$\nL = \\frac{\\text{range}}{\\Delta}\n$$\n\nSubstitute values:\n$$\nL = \\frac{4}{1/32} = 4 \\times 32 = 128\n$$\n\nSo, there are **128 quantization levels**.\n\n---\n\n### Step 2: Find bits per sample $n$\n\nFor uniform quantization with $L$ levels:\n$$\nn = \\log_2 L\n$$\n\n$$\nn = \\log_2 128 = 7\n$$\n\nSo, **7 bits per sample**.\n\n---\n\n### Step 3: Find the PCM bit rate $R_b$\n\nBit rate is:\n$$\nR_b = n \\cdot f_s\n$$\n\n$$\nR_b = 7 \\times 10^4 = 70,\\!000 \\, \\text{bits per second} = 70 \\, \\text{kbps}\n$$\n\n---\n\n### \u2705 Final Answers:\n- Bits per sample: $ n = 7 $\n- PCM bit rate: $ R_b = 70 \\, \\text{kbps} $",
+          "score": 1.0,
+          "answer_type": "formula",
+          "details": {
+            "answer_type": "formula",
+            "expected": "n=7, R_b=70 kbit/s",
+            "predicted": "We are given:\n\n- Uniform quantization step:  \n  $$ \\Delta = \\frac{1}{32} \\, \\text{V} $$\n- Amplitude range:  \n  From $-2$ V to $+2$ V \u2192 total range = $4$ V\n- Sampling rate:  \n  $ f_s = 10 \\, \\text{kHz} $\n\n---\n\n### Step 1: Find the number of quantization levels $L$\n\nUsing the formula:\n$$\nL = \\frac{\\text{range}}{\\Delta}\n$$\n\nSubstitute values:\n$$\nL = \\frac{4}{1/32} = 4 \\times 32 = 128\n$$\n\nSo, there are **128 quantization levels**.\n\n---\n\n### Step 2: Find bits per sample $n$\n\nFor uniform quantization with $L$ levels:\n$$\nn = \\log_2 L\n$$\n\n$$\nn = \\log_2 128 = 7\n$$\n\nSo, **7 bits per sample**.\n\n---\n\n### Step 3: Find the PCM bit rate $R_b$\n\nBit rate is:\n$$\nR_b = n \\cdot f_s\n$$\n\n$$\nR_b = 7 \\times 10^4 = 70,\\!000 \\, \\text{bits per second} = 70 \\, \\text{kbps}\n$$\n\n---\n\n### \u2705 Final Answers:\n- Bits per sample: $ n = 7 $\n- PCM bit rate: $ R_b = 70 \\, \\text{kbps} $",
+            "method": "numeric_extraction"
+          }
+        },
+        {
+          "problem_id": "test_98",
+          "question": "Compute required M for \u03b7=1.25 bit/s/Hz with \u03b1=0.6 using \u03b7=log2(M)/(1+\u03b1).",
+          "expected_answer": "M=4",
+          "agent_answer": "We are given the formula for spectral efficiency:\n\n$$\n\\eta = \\frac{\\log_2(M)}{1 + \\alpha}\n$$\n\nand the values:\n- $ \\eta = 1.25 $ bit/s/Hz  \n- $ \\alpha = 0.6 $\n\nWe need to solve for $ M $.\n\n---\n\n### Step 1: Plug in known values\n$$\n1.25 = \\frac{\\log_2(M)}{1 + 0.6}\n$$\n$$\n1.25 = \\frac{\\log_2(M)}{1.6}\n$$\n\n---\n\n### Step 2: Multiply both sides by 1.6\n$$\n\\log_2(M) = 1.25 \\times 1.6 = 2\n$$\n\n---\n\n### Step 3: Solve for $ M $\n$$\nM = 2^2 = 4\n$$\n\n---\n\n\u2705 **Final Answer:**  \n$$\nM = 4\n$$",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "M=4",
+            "predicted": "We are given the formula for spectral efficiency:\n\n$$\n\\eta = \\frac{\\log_2(M)}{1 + \\alpha}\n$$\n\nand the values:\n- $ \\eta = 1.25 $ bit/s/Hz  \n- $ \\alpha = 0.6 $\n\nWe need to solve for $ M $.\n\n---\n\n### Step 1: Plug in known values\n$$\n1.25 = \\frac{\\log_2(M)}{1 + 0.6}\n$$\n$$\n1.25 = \\frac{\\log_2(M)}{1.6}\n$$\n\n---\n\n### Step 2: Multiply both sides by 1.6\n$$\n\\log_2(M) = 1.25 \\times 1.6 = 2\n$$\n\n---\n\n### Step 3: Solve for $ M $\n$$\nM = 2^2 = 4\n$$\n\n---\n\n\u2705 **Final Answer:**  \n$$\nM = 4\n$$",
+            "expected_value": 4.0,
+            "predicted_value": 4.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_343",
+          "question": "Carson inversion. If FM bandwidth is 100 kHz and message tone f_m=10 kHz, find peak deviation \u0394f.",
+          "expected_answer": "40 kHz",
+          "agent_answer": "To solve this, we use the concept of **Carson's Rule** for frequency modulation (FM), which gives an approximate bandwidth for an FM signal:\n\n$$\nB_{\\text{FM}} \\approx 2(\\Delta f + f_m)\n$$\n\nWhere:\n- $ B_{\\text{FM}} $ = FM bandwidth (given as 100 kHz),\n- $ \\Delta f $ = peak frequency deviation (what we want to find),\n- $ f_m $ = message tone frequency (given as 10 kHz).\n\n### Step 1: Plug in known values\n$$\n100\\ \\text{kHz} = 2(\\Delta f + 10\\ \\text{kHz})\n$$\n\n### Step 2: Solve for $ \\Delta f $\n\nDivide both sides by 2:\n$$\n50\\ \\text{kHz} = \\Delta f + 10\\ \\text{kHz}\n$$\n\nSubtract 10 kHz:\n$$\n\\Delta f = 50\\ \\text{kHz} - 10\\ \\text{kHz} = 40\\ \\text{kHz}\n$$\n\n### \u2705 Final Answer:\n$$\n\\Delta f = 40\\ \\text{kHz}\n$$\n\nThis is the peak frequency deviation.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "40 kHz",
+            "predicted": "To solve this, we use the concept of **Carson's Rule** for frequency modulation (FM), which gives an approximate bandwidth for an FM signal:\n\n$$\nB_{\\text{FM}} \\approx 2(\\Delta f + f_m)\n$$\n\nWhere:\n- $ B_{\\text{FM}} $ = FM bandwidth (given as 100 kHz),\n- $ \\Delta f $ = peak frequency deviation (what we want to find),\n- $ f_m $ = message tone frequency (given as 10 kHz).\n\n### Step 1: Plug in known values\n$$\n100\\ \\text{kHz} = 2(\\Delta f + 10\\ \\text{kHz})\n$$\n\n### Step 2: Solve for $ \\Delta f $\n\nDivide both sides by 2:\n$$\n50\\ \\text{kHz} = \\Delta f + 10\\ \\text{kHz}\n$$\n\nSubtract 10 kHz:\n$$\n\\Delta f = 50\\ \\text{kHz} - 10\\ \\text{kHz} = 40\\ \\text{kHz}\n$$\n\n### \u2705 Final Answer:\n$$\n\\Delta f = 40\\ \\text{kHz}\n$$\n\nThis is the peak frequency deviation.",
+            "expected_value": 40000.0,
+            "predicted_value": 40000.0,
+            "expected_unit": "khz",
+            "predicted_unit": "khz"
+          }
+        },
+        {
+          "problem_id": "test_1015",
+          "question": "DBPSK over AWGN. E_b/N_0=3 dB. Compute P_b=0.5 e^{-\\gamma_b}.",
+          "expected_answer": "6.80e-2",
+          "agent_answer": "We are given:\n\n- DBPSK (Differential Binary Phase Shift Keying) over an AWGN channel\n- $ E_b/N_0 = 3 \\, \\text{dB} $\n- Formula for bit error probability:  \n  $$\n  P_b = \\frac{1}{2} e^{-\\gamma_b}\n  $$\n  where $ \\gamma_b = \\frac{E_b}{N_0} $\n\n---\n\n### Step 1: Convert $ E_b/N_0 $ from dB to linear scale\n\n$$\n\\gamma_b = 10^{(3/10)} = 10^{0.3} \\approx 1.9953\n$$\n\n---\n\n### Step 2: Plug into the formula\n\n$$\nP_b = \\frac{1}{2} e^{-\\gamma_b} = \\frac{1}{2} e^{-1.9953}\n$$\n\nCalculate the exponential:\n\n$$\ne^{-1.9953} \\approx \\frac{1}{e^{1.9953}} \\approx \\frac{1}{7.35} \\approx 0.1361\n$$\n\nNow multiply by $ \\frac{1}{2} $:\n\n$$\nP_b \\approx \\frac{1}{2} \\times 0.1361 = 0.06805\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 0.068\n$$\n\nSo, the bit error probability is approximately **0.068** or **6.8%**.",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "6.80e-2",
+            "predicted": "We are given:\n\n- DBPSK (Differential Binary Phase Shift Keying) over an AWGN channel\n- $ E_b/N_0 = 3 \\, \\text{dB} $\n- Formula for bit error probability:  \n  $$\n  P_b = \\frac{1}{2} e^{-\\gamma_b}\n  $$\n  where $ \\gamma_b = \\frac{E_b}{N_0} $\n\n---\n\n### Step 1: Convert $ E_b/N_0 $ from dB to linear scale\n\n$$\n\\gamma_b = 10^{(3/10)} = 10^{0.3} \\approx 1.9953\n$$\n\n---\n\n### Step 2: Plug into the formula\n\n$$\nP_b = \\frac{1}{2} e^{-\\gamma_b} = \\frac{1}{2} e^{-1.9953}\n$$\n\nCalculate the exponential:\n\n$$\ne^{-1.9953} \\approx \\frac{1}{e^{1.9953}} \\approx \\frac{1}{7.35} \\approx 0.1361\n$$\n\nNow multiply by $ \\frac{1}{2} $:\n\n$$\nP_b \\approx \\frac{1}{2} \\times 0.1361 = 0.06805\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\nP_b \\approx 0.068\n$$\n\nSo, the bit error probability is approximately **0.068** or **6.8%**.",
+            "expected_value": 0.068,
+            "predicted_value": 6.8,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_379",
+          "question": "Shannon: B=50 kHz, capacity required 150 kbit/s. Find SNR (dB).",
+          "expected_answer": "8.45 dB",
+          "agent_answer": "To find the **SNR (Signal-to-Noise Ratio) in dB** given:\n\n- Bandwidth $ B = 50 \\text{ kHz} = 50,000 \\text{ Hz} $\n- Channel capacity $ C = 150 \\text{ kbit/s} = 150,000 \\text{ bits per second} $\n\nWe use **Shannon\u2019s Channel Capacity Formula**:\n\n$$\nC = B \\log_2(1 + \\text{SNR})\n$$\n\nWhere:\n- $ C $ is the channel capacity in bits per second,\n- $ B $ is the bandwidth in Hz,\n- $ \\text{SNR} $ is the signal-to-noise ratio (linear, not in dB).\n\n---\n\n### Step 1: Plug values into the formula\n$$\n150,000 = 50,000 \\log_2(1 + \\text{SNR})\n$$\n\nDivide both sides by 50,000:\n$$\n3 = \\log_2(1 + \\text{SNR})\n$$\n\n### Step 2: Solve for SNR\nConvert from log base 2 to exponential form:\n$$\n1 + \\text{SNR} = 2^3 = 8\n$$\n\n$$\n\\text{SNR} = 8 - 1 = 7\n$$\n\n### Step 3: Convert SNR to dB\n$$\n\\text{SNR}_{\\text{dB}} = 10 \\log_{10}(7) \\approx 10 \\times 0.8451 = 8.451 \\text{ dB}\n$$\n\n---\n\n### \u2705 Final Answer:\n**SNR \u2248 8.45 dB**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "8.45 dB",
+            "predicted": "To find the **SNR (Signal-to-Noise Ratio) in dB** given:\n\n- Bandwidth $ B = 50 \\text{ kHz} = 50,000 \\text{ Hz} $\n- Channel capacity $ C = 150 \\text{ kbit/s} = 150,000 \\text{ bits per second} $\n\nWe use **Shannon\u2019s Channel Capacity Formula**:\n\n$$\nC = B \\log_2(1 + \\text{SNR})\n$$\n\nWhere:\n- $ C $ is the channel capacity in bits per second,\n- $ B $ is the bandwidth in Hz,\n- $ \\text{SNR} $ is the signal-to-noise ratio (linear, not in dB).\n\n---\n\n### Step 1: Plug values into the formula\n$$\n150,000 = 50,000 \\log_2(1 + \\text{SNR})\n$$\n\nDivide both sides by 50,000:\n$$\n3 = \\log_2(1 + \\text{SNR})\n$$\n\n### Step 2: Solve for SNR\nConvert from log base 2 to exponential form:\n$$\n1 + \\text{SNR} = 2^3 = 8\n$$\n\n$$\n\\text{SNR} = 8 - 1 = 7\n$$\n\n### Step 3: Convert SNR to dB\n$$\n\\text{SNR}_{\\text{dB}} = 10 \\log_{10}(7) \\approx 10 \\times 0.8451 = 8.451 \\text{ dB}\n$$\n\n---\n\n### \u2705 Final Answer:\n**SNR \u2248 8.45 dB**",
+            "expected_value": 8.45,
+            "predicted_value": 8.45,
+            "expected_unit": "db",
+            "predicted_unit": "db"
+          }
+        },
+        {
+          "problem_id": "test_252",
+          "question": "Compute transmit power for isotropic free-space link. f=5 GHz, d=20 m. Need P_r=0 dBm. Find P_t (W).",
+          "expected_answer": "3.51e2 W",
+          "agent_answer": "To compute the transmit power \\( P_t \\) required for an isotropic free-space link, we use the **Friis transmission equation**:\n\n\\[\nP_r = P_t G_t G_r \\left( \\frac{\\lambda}{4\\pi d} \\right)^2\n\\]\n\nWhere:\n- \\( P_r \\): Received power (in watts)\n- \\( P_t \\): Transmitted power (in watts) \u2014 what we're solving for\n- \\( G_t, G_r \\): Antenna gains (for isotropic antennas, \\( G_t = G_r = 1 \\))\n- \\( \\lambda \\): Wavelength (meters)\n- \\( d \\): Distance between antennas (meters)\n- \\( f \\): Frequency (Hz)\n\n---\n\n### Step 1: Convert given values\n- \\( f = 5 \\, \\text{GHz} = 5 \\times 10^9 \\, \\text{Hz} \\)\n- \\( d = 20 \\, \\text{m} \\)\n- \\( P_r = 0 \\, \\text{dBm} = 10^{0/10} \\, \\text{mW} = 1 \\, \\text{mW} = 0.001 \\, \\text{W} \\)\n\n---\n\n### Step 2: Compute wavelength \\( \\lambda \\)\n\n\\[\n\\lambda = \\frac{c}{f} = \\frac{3 \\times 10^8 \\, \\text{m/s}}{5 \\times 10^9 \\, \\text{Hz}} = 0.06 \\, \\text{m}\n\\]\n\n---\n\n### Step 3: Plug into Friis equation\n\nSince both antennas are isotropic, \\( G_t = G_r = 1 \\):\n\n\\[\nP_r = P_t \\left( \\frac{\\lambda}{4\\pi d} \\right)^2\n\\]\n\nSolve for \\( P_t \\):\n\n\\[\nP_t = P_r \\left( \\frac{4\\pi d}{\\lambda} \\right)^2\n\\]\n\nSubstitute values:\n\n\\[\nP_t = 0.001 \\times \\left( \\frac{4\\pi \\times 20}{0.06} \\right)^2\n\\]\n\nFirst compute inside the parentheses:\n\n\\[\n\\frac{4\\pi \\times 20}{0.06} = \\frac{80\\pi}{0.06} \\approx \\frac{251.33}{0.06} \\approx 4188.8\n\\]\n\nNow square it:\n\n\\[\n(4188.8)^2 \\approx 17,546,000\n\\]\n\nFinally:\n\n\\[\nP_t = 0.001 \\times 17,546,000 = 17,546 \\, \\text{W}\n\\]\n\n---\n\n### \u2705 Final Answer:\n\\[\n\\boxed{P_t = 17.55 \\, \\text{kW}}\n\\]\n\nThis is a very high transmit power \u2014 typical for a 5 GHz signal over 20 meters with isotropic antennas and no gain. In practice, directional antennas would be used to reduce required power.",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "3.51e2 W",
+            "predicted": "To compute the transmit power \\( P_t \\) required for an isotropic free-space link, we use the **Friis transmission equation**:\n\n\\[\nP_r = P_t G_t G_r \\left( \\frac{\\lambda}{4\\pi d} \\right)^2\n\\]\n\nWhere:\n- \\( P_r \\): Received power (in watts)\n- \\( P_t \\): Transmitted power (in watts) \u2014 what we're solving for\n- \\( G_t, G_r \\): Antenna gains (for isotropic antennas, \\( G_t = G_r = 1 \\))\n- \\( \\lambda \\): Wavelength (meters)\n- \\( d \\): Distance between antennas (meters)\n- \\( f \\): Frequency (Hz)\n\n---\n\n### Step 1: Convert given values\n- \\( f = 5 \\, \\text{GHz} = 5 \\times 10^9 \\, \\text{Hz} \\)\n- \\( d = 20 \\, \\text{m} \\)\n- \\( P_r = 0 \\, \\text{dBm} = 10^{0/10} \\, \\text{mW} = 1 \\, \\text{mW} = 0.001 \\, \\text{W} \\)\n\n---\n\n### Step 2: Compute wavelength \\( \\lambda \\)\n\n\\[\n\\lambda = \\frac{c}{f} = \\frac{3 \\times 10^8 \\, \\text{m/s}}{5 \\times 10^9 \\, \\text{Hz}} = 0.06 \\, \\text{m}\n\\]\n\n---\n\n### Step 3: Plug into Friis equation\n\nSince both antennas are isotropic, \\( G_t = G_r = 1 \\):\n\n\\[\nP_r = P_t \\left( \\frac{\\lambda}{4\\pi d} \\right)^2\n\\]\n\nSolve for \\( P_t \\):\n\n\\[\nP_t = P_r \\left( \\frac{4\\pi d}{\\lambda} \\right)^2\n\\]\n\nSubstitute values:\n\n\\[\nP_t = 0.001 \\times \\left( \\frac{4\\pi \\times 20}{0.06} \\right)^2\n\\]\n\nFirst compute inside the parentheses:\n\n\\[\n\\frac{4\\pi \\times 20}{0.06} = \\frac{80\\pi}{0.06} \\approx \\frac{251.33}{0.06} \\approx 4188.8\n\\]\n\nNow square it:\n\n\\[\n(4188.8)^2 \\approx 17,546,000\n\\]\n\nFinally:\n\n\\[\nP_t = 0.001 \\times 17,546,000 = 17,546 \\, \\text{W}\n\\]\n\n---\n\n### \u2705 Final Answer:\n\\[\n\\boxed{P_t = 17.55 \\, \\text{kW}}\n\\]\n\nThis is a very high transmit power \u2014 typical for a 5 GHz signal over 20 meters with isotropic antennas and no gain. In practice, directional antennas would be used to reduce required power.",
+            "expected_value": 351.0,
+            "predicted_value": 20.0,
+            "expected_unit": "w",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_524",
+          "question": "Required SNR is 15 dB and noise is \u221260 dBm. Find required received power threshold in dBm.",
+          "expected_answer": "-45 dBm",
+          "agent_answer": "To find the **required received power threshold** in dBm, we use the relationship between **Signal-to-Noise Ratio (SNR)** and the **received signal power** and **noise power**:\n\n$$\n\\text{SNR (dB)} = P_{\\text{rx}} (\\text{dBm}) - P_{\\text{noise}} (\\text{dBm})\n$$\n\nGiven:\n- Required SNR = 15 dB  \n- Noise power = \u221260 dBm  \n\nWe solve for $ P_{\\text{rx}} $:\n\n$$\nP_{\\text{rx}} = \\text{SNR} + P_{\\text{noise}} = 15 \\, \\text{dB} + (-60 \\, \\text{dBm}) = -45 \\, \\text{dBm}\n$$\n\n### \u2705 Answer:\n**Required received power threshold = \u221245 dBm**",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "-45 dBm",
+            "predicted": "To find the **required received power threshold** in dBm, we use the relationship between **Signal-to-Noise Ratio (SNR)** and the **received signal power** and **noise power**:\n\n$$\n\\text{SNR (dB)} = P_{\\text{rx}} (\\text{dBm}) - P_{\\text{noise}} (\\text{dBm})\n$$\n\nGiven:\n- Required SNR = 15 dB  \n- Noise power = \u221260 dBm  \n\nWe solve for $ P_{\\text{rx}} $:\n\n$$\nP_{\\text{rx}} = \\text{SNR} + P_{\\text{noise}} = 15 \\, \\text{dB} + (-60 \\, \\text{dBm}) = -45 \\, \\text{dBm}\n$$\n\n### \u2705 Answer:\n**Required received power threshold = \u221245 dBm**",
+            "expected_value": -45.0,
+            "predicted_value": 45.0,
+            "expected_unit": "dbm",
+            "predicted_unit": "dbm"
+          }
+        },
+        {
+          "problem_id": "test_684",
+          "question": "Compute Eb/N0 from BER for coherent BPSK. If BER=10^{-3}, find Eb/N0 in dB.",
+          "expected_answer": "6.79 dB",
+          "agent_answer": "For **coherent BPSK (Binary Phase Shift Keying)**, the relationship between Bit Error Rate (BER) and the energy per bit to noise power spectral density ratio $ E_b/N_0 $ is given by:\n\n$$\n\\text{BER} = Q\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right)\n$$\n\nwhere $ Q(x) $ is the Q-function, defined as:\n\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\n---\n\n### Given:\n- BER = $ 10^{-3} $\n\nWe want to find $ E_b/N_0 $ in dB.\n\n### Step 1: Use the inverse Q-function\nWe solve for $ x $ such that:\n\n$$\nQ(x) = 10^{-3}\n$$\n\nFrom standard Q-function tables or using a calculator/software:\n\n$$\nQ^{-1}(10^{-3}) \\approx 3.09\n$$\n\nSo:\n\n$$\n\\sqrt{\\frac{2E_b}{N_0}} = 3.09\n$$\n\n### Step 2: Solve for $ \\frac{E_b}{N_0} $\n\n$$\n\\frac{2E_b}{N_0} = (3.09)^2 = 9.5481\n$$\n\n$$\n\\frac{E_b}{N_0} = \\frac{9.5481}{2} = 4.774\n$$\n\n### Step 3: Convert to dB\n\n$$\n\\frac{E_b}{N_0} \\text{ (dB)} = 10 \\log_{10}(4.774) \\approx 6.79 \\, \\text{dB}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\frac{E_b}{N_0} \\approx 6.79 \\, \\text{dB}\n$$\n\nThis is the required $ E_b/N_0 $ for a BER of $ 10^{-3} $ in coherent BPSK.",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "6.79 dB",
+            "predicted": "For **coherent BPSK (Binary Phase Shift Keying)**, the relationship between Bit Error Rate (BER) and the energy per bit to noise power spectral density ratio $ E_b/N_0 $ is given by:\n\n$$\n\\text{BER} = Q\\left( \\sqrt{\\frac{2E_b}{N_0}} \\right)\n$$\n\nwhere $ Q(x) $ is the Q-function, defined as:\n\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\n---\n\n### Given:\n- BER = $ 10^{-3} $\n\nWe want to find $ E_b/N_0 $ in dB.\n\n### Step 1: Use the inverse Q-function\nWe solve for $ x $ such that:\n\n$$\nQ(x) = 10^{-3}\n$$\n\nFrom standard Q-function tables or using a calculator/software:\n\n$$\nQ^{-1}(10^{-3}) \\approx 3.09\n$$\n\nSo:\n\n$$\n\\sqrt{\\frac{2E_b}{N_0}} = 3.09\n$$\n\n### Step 2: Solve for $ \\frac{E_b}{N_0} $\n\n$$\n\\frac{2E_b}{N_0} = (3.09)^2 = 9.5481\n$$\n\n$$\n\\frac{E_b}{N_0} = \\frac{9.5481}{2} = 4.774\n$$\n\n### Step 3: Convert to dB\n\n$$\n\\frac{E_b}{N_0} \\text{ (dB)} = 10 \\log_{10}(4.774) \\approx 6.79 \\, \\text{dB}\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\n\\frac{E_b}{N_0} \\approx 6.79 \\, \\text{dB}\n$$\n\nThis is the required $ E_b/N_0 $ for a BER of $ 10^{-3} $ in coherent BPSK.",
+            "expected_value": 6.79,
+            "predicted_value": -3.0,
+            "expected_unit": "db",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_54",
+          "question": "Compute required M to achieve R_b=6000 bit/s in 3 kHz channel with \u03b1=1. Find smallest M-PSK.",
+          "expected_answer": "M=16",
+          "agent_answer": "To find the smallest **M-PSK** (M-ary Phase Shift Keying) modulation scheme that achieves a bit rate $ R_b = 6000 $ bit/s over a **3 kHz** channel with **roll-off factor $ \\alpha = 1 $**, we need to use the relationship between bandwidth, symbol rate, and bit rate.\n\n---\n\n### \u2705 Step 1: Understand the Bandwidth Constraint\n\nFor a baseband signal using **Nyquist criterion** with roll-off factor $ \\alpha $, the required bandwidth is:\n\n$$\nB = \\frac{R_s}{2}(1 + \\alpha)\n$$\n\nWhere:\n- $ B $ = channel bandwidth = 3000 Hz\n- $ R_s $ = symbol rate (symbols per second)\n- $ \\alpha $ = roll-off factor = 1\n\nPlug in values:\n\n$$\n3000 = \\frac{R_s}{2}(1 + 1) = \\frac{R_s}{2} \\cdot 2 = R_s\n$$\n\nSo,\n$$\nR_s = 3000 \\text{ symbols/sec}\n$$\n\n---\n\n### \u2705 Step 2: Relate Bit Rate to Symbol Rate\n\nFor M-PSK, each symbol carries:\n\n$$\n\\log_2(M) \\text{ bits per symbol}\n$$\n\nSo, the bit rate is:\n\n$$\nR_b = R_s \\cdot \\log_2(M)\n$$\n\nWe are given $ R_b = 6000 $ bit/s and $ R_s = 3000 $ symbols/s. Plug in:\n\n$$\n6000 = 3000 \\cdot \\log_2(M)\n$$\n\nDivide both sides by 3000:\n\n$$\n\\log_2(M) = 2\n$$\n\nSo,\n\n$$\nM = 2^2 = 4\n$$\n\n---\n\n### \u2705 Final Answer:\n\nThe **smallest M-PSK** that can achieve 6000 bit/s in a 3 kHz channel with $ \\alpha = 1 $ is:\n\n$$\n\\boxed{4\\text{-PSK}} \\quad \\text{(also known as QPSK)}\n$$\n\nThis is the minimum M satisfying the constraint.",
+          "score": 0.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "M=16",
+            "predicted": "To find the smallest **M-PSK** (M-ary Phase Shift Keying) modulation scheme that achieves a bit rate $ R_b = 6000 $ bit/s over a **3 kHz** channel with **roll-off factor $ \\alpha = 1 $**, we need to use the relationship between bandwidth, symbol rate, and bit rate.\n\n---\n\n### \u2705 Step 1: Understand the Bandwidth Constraint\n\nFor a baseband signal using **Nyquist criterion** with roll-off factor $ \\alpha $, the required bandwidth is:\n\n$$\nB = \\frac{R_s}{2}(1 + \\alpha)\n$$\n\nWhere:\n- $ B $ = channel bandwidth = 3000 Hz\n- $ R_s $ = symbol rate (symbols per second)\n- $ \\alpha $ = roll-off factor = 1\n\nPlug in values:\n\n$$\n3000 = \\frac{R_s}{2}(1 + 1) = \\frac{R_s}{2} \\cdot 2 = R_s\n$$\n\nSo,\n$$\nR_s = 3000 \\text{ symbols/sec}\n$$\n\n---\n\n### \u2705 Step 2: Relate Bit Rate to Symbol Rate\n\nFor M-PSK, each symbol carries:\n\n$$\n\\log_2(M) \\text{ bits per symbol}\n$$\n\nSo, the bit rate is:\n\n$$\nR_b = R_s \\cdot \\log_2(M)\n$$\n\nWe are given $ R_b = 6000 $ bit/s and $ R_s = 3000 $ symbols/s. Plug in:\n\n$$\n6000 = 3000 \\cdot \\log_2(M)\n$$\n\nDivide both sides by 3000:\n\n$$\n\\log_2(M) = 2\n$$\n\nSo,\n\n$$\nM = 2^2 = 4\n$$\n\n---\n\n### \u2705 Final Answer:\n\nThe **smallest M-PSK** that can achieve 6000 bit/s in a 3 kHz channel with $ \\alpha = 1 $ is:\n\n$$\n\\boxed{4\\text{-PSK}} \\quad \\text{(also known as QPSK)}\n$$\n\nThis is the minimum M satisfying the constraint.",
+            "expected_value": 16.0,
+            "predicted_value": 4.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_897",
+          "question": "FM modulation index and G_FM. Given f_m=5 kHz and \u0394f=15 kHz, compute \u03b2 and G_FM=3\u03b2^2(1+\u03b2).",
+          "expected_answer": "\u03b2=3, G_FM=108",
+          "agent_answer": "We are given:\n\n- Modulating frequency: $ f_m = 5 \\, \\text{kHz} $\n- Frequency deviation: $ \\Delta f = 15 \\, \\text{kHz} $\n\n---\n\n### Step 1: Compute the FM modulation index $ \\beta $\n\nThe modulation index for FM is defined as:\n\n$$\n\\beta = \\frac{\\Delta f}{f_m}\n$$\n\nSubstitute the values:\n\n$$\n\\beta = \\frac{15 \\, \\text{kHz}}{5 \\, \\text{kHz}} = 3\n$$\n\n\u2705 So, $ \\beta = 3 $\n\n---\n\n### Step 2: Compute $ G_{FM} = 3\\beta^2(1 + \\beta) $\n\nPlug in $ \\beta = 3 $:\n\n$$\nG_{FM} = 3 \\times (3)^2 \\times (1 + 3)\n= 3 \\times 9 \\times 4\n= 108\n$$\n\n\u2705 So, $ G_{FM} = 108 $\n\n---\n\n### \u2705 Final Answers:\n- Modulation index: $ \\beta = 3 $\n- Gain factor: $ G_{FM} = 108 $",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "\u03b2=3, G_FM=108",
+            "predicted": "We are given:\n\n- Modulating frequency: $ f_m = 5 \\, \\text{kHz} $\n- Frequency deviation: $ \\Delta f = 15 \\, \\text{kHz} $\n\n---\n\n### Step 1: Compute the FM modulation index $ \\beta $\n\nThe modulation index for FM is defined as:\n\n$$\n\\beta = \\frac{\\Delta f}{f_m}\n$$\n\nSubstitute the values:\n\n$$\n\\beta = \\frac{15 \\, \\text{kHz}}{5 \\, \\text{kHz}} = 3\n$$\n\n\u2705 So, $ \\beta = 3 $\n\n---\n\n### Step 2: Compute $ G_{FM} = 3\\beta^2(1 + \\beta) $\n\nPlug in $ \\beta = 3 $:\n\n$$\nG_{FM} = 3 \\times (3)^2 \\times (1 + 3)\n= 3 \\times 9 \\times 4\n= 108\n$$\n\n\u2705 So, $ G_{FM} = 108 $\n\n---\n\n### \u2705 Final Answers:\n- Modulation index: $ \\beta = 3 $\n- Gain factor: $ G_{FM} = 108 $",
+            "expected_value": 108.0,
+            "predicted_value": 108.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_53",
+          "question": "Compute 8PSK nearest-neighbor union bound. Use p_b\u2248(2/3)Q(\\sqrt{6(E_b/N0)} sin(\u03c0/8)). For E_b/N0=10 dB, compute p_b.",
+          "expected_answer": "7.0e-3",
+          "agent_answer": "To compute the bit error probability $ p_b $ for 8PSK using the given approximation:\n\n$$\np_b \\approx \\frac{2}{3} Q\\left( \\sqrt{6 \\cdot \\frac{E_b}{N_0}} \\cdot \\sin\\left(\\frac{\\pi}{8}\\right) \\right)\n$$\n\n---\n\n### Step 1: Convert $ E_b/N_0 $ from dB to linear scale\n\nGiven:\n$$\n\\frac{E_b}{N_0} = 10 \\text{ dB}\n$$\n\nConvert to linear:\n$$\n\\frac{E_b}{N_0} = 10^{10/10} = 10\n$$\n\n---\n\n### Step 2: Compute $ \\sin(\\pi/8) $\n\n$$\n\\frac{\\pi}{8} = 22.5^\\circ \\Rightarrow \\sin\\left(\\frac{\\pi}{8}\\right) = \\sin(22.5^\\circ) = \\frac{\\sqrt{2 - \\sqrt{2}}}{2} \\approx 0.3827\n$$\n\n---\n\n### Step 3: Plug into the formula\n\nNow compute the argument of the $ Q $-function:\n\n$$\n\\sqrt{6 \\cdot 10} \\cdot \\sin\\left(\\frac{\\pi}{8}\\right) = \\sqrt{60} \\cdot 0.3827\n$$\n\nFirst, $ \\sqrt{60} \\approx 7.746 $\n\nThen:\n$$\n7.746 \\cdot 0.3827 \\approx 2.965\n$$\n\nSo:\n$$\np_b \\approx \\frac{2}{3} Q(2.965)\n$$\n\n---\n\n### Step 4: Evaluate $ Q(2.965) $\n\nThe $ Q $-function is:\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\nUsing standard values or a calculator:\n\n$$\nQ(2.965) \\approx 0.00151\n$$\n\n(You can verify this using a Q-function table or Python\u2019s `scipy.special.erfc` function.)\n\n---\n\n### Step 5: Final computation\n\n$$\np_b \\approx \\frac{2}{3} \\cdot 0.00151 = 0.001007\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\np_b \\approx 1.01 \\times 10^{-3}\n$$\n\nThat is, approximately **0.00101** or **0.101%** bit error rate at $ E_b/N_0 = 10 $ dB for 8PSK using the nearest-neighbor union bound approximation.",
+          "score": 0.0,
+          "answer_type": "scientific",
+          "details": {
+            "answer_type": "scientific",
+            "expected": "7.0e-3",
+            "predicted": "To compute the bit error probability $ p_b $ for 8PSK using the given approximation:\n\n$$\np_b \\approx \\frac{2}{3} Q\\left( \\sqrt{6 \\cdot \\frac{E_b}{N_0}} \\cdot \\sin\\left(\\frac{\\pi}{8}\\right) \\right)\n$$\n\n---\n\n### Step 1: Convert $ E_b/N_0 $ from dB to linear scale\n\nGiven:\n$$\n\\frac{E_b}{N_0} = 10 \\text{ dB}\n$$\n\nConvert to linear:\n$$\n\\frac{E_b}{N_0} = 10^{10/10} = 10\n$$\n\n---\n\n### Step 2: Compute $ \\sin(\\pi/8) $\n\n$$\n\\frac{\\pi}{8} = 22.5^\\circ \\Rightarrow \\sin\\left(\\frac{\\pi}{8}\\right) = \\sin(22.5^\\circ) = \\frac{\\sqrt{2 - \\sqrt{2}}}{2} \\approx 0.3827\n$$\n\n---\n\n### Step 3: Plug into the formula\n\nNow compute the argument of the $ Q $-function:\n\n$$\n\\sqrt{6 \\cdot 10} \\cdot \\sin\\left(\\frac{\\pi}{8}\\right) = \\sqrt{60} \\cdot 0.3827\n$$\n\nFirst, $ \\sqrt{60} \\approx 7.746 $\n\nThen:\n$$\n7.746 \\cdot 0.3827 \\approx 2.965\n$$\n\nSo:\n$$\np_b \\approx \\frac{2}{3} Q(2.965)\n$$\n\n---\n\n### Step 4: Evaluate $ Q(2.965) $\n\nThe $ Q $-function is:\n$$\nQ(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_x^\\infty e^{-t^2/2} dt\n$$\n\nUsing standard values or a calculator:\n\n$$\nQ(2.965) \\approx 0.00151\n$$\n\n(You can verify this using a Q-function table or Python\u2019s `scipy.special.erfc` function.)\n\n---\n\n### Step 5: Final computation\n\n$$\np_b \\approx \\frac{2}{3} \\cdot 0.00151 = 0.001007\n$$\n\n---\n\n### \u2705 Final Answer:\n$$\np_b \\approx 1.01 \\times 10^{-3}\n$$\n\nThat is, approximately **0.00101** or **0.101%** bit error rate at $ E_b/N_0 = 10 $ dB for 8PSK using the nearest-neighbor union bound approximation.",
+            "expected_value": 0.007,
+            "predicted_value": 8.0,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_912",
+          "question": "Coherent 2ASK with equal priors in AWGN. Received amplitude A=2 mV (across 1 \u03a9), bit rate R_b=2\u00d710^6 bit/s, one-sided noise PSD N_0=5\u00d710^{-11} W/Hz. Using E_b = A^2/(4R_b), estimate P_b = Q(\\sqrt{E_b/N_0}).",
+          "expected_answer": "0.4602",
+          "agent_answer": "We are asked to estimate the bit error probability $ P_b $ for a coherent 2ASK (Amplitude Shift Keying) system with equal priors in additive white Gaussian noise (AWGN), given:\n\n- Received amplitude: $ A = 2 \\, \\text{mV} = 2 \\times 10^{-3} \\, \\text{V} $\n- Bit rate: $ R_b = 2 \\times 10^6 \\, \\text{bit/s} $\n- One-sided noise power spectral density: $ N_0 = 5 \\times 10^{-11} \\, \\text{W/Hz} $\n- Energy per bit: $ E_b = \\frac{A^2}{4R_b} $\n- Bit error probability: $ P_b = Q\\left( \\sqrt{\\frac{E_b}{N_0}} \\right) $\n\n---\n\n### Step 1: Compute $ E_b $\n\n$$\nE_b = \\frac{A^2}{4R_b}\n= \\frac{(2 \\times 10^{-3})^2}{4 \\times 2 \\times 10^6}\n= \\frac{4 \\times 10^{-6}}{8 \\times 10^6}\n= \\frac{4}{8} \\times 10^{-12}\n= 0.5 \\times 10^{-12}\n= 5 \\times 10^{-13} \\, \\text{J}\n$$\n\n---\n\n### Step 2: Compute $ \\frac{E_b}{N_0} $\n\n$$\n\\frac{E_b}{N_0}\n= \\frac{5 \\times 10^{-13}}{5 \\times 10^{-11}}\n= 10^{-2}\n= 0.01\n$$\n\n---\n\n### Step 3: Compute $ P_b = Q\\left( \\sqrt{\\frac{E_b}{N_0}} \\right) $\n\n$$\n\\sqrt{\\frac{E_b}{N_0}} = \\sqrt{0.01} = 0.1\n$$\n\nSo,\n\n$$\nP_b = Q(0.1)\n$$\n\nUsing standard values of the Q-function:\n\n- $ Q(0.1) \\approx 0.4602 $\n\n(You can confirm this using a Q-function table or calculator.)\n\n---\n\n### \u2705 Final Answer:\n\n$$\nP_b \\approx 0.4602\n$$\n\nThis is a surprisingly high bit error rate \u2014 typical for low signal-to-noise conditions. The system is operating far below the threshold where reliable communication would be expected.",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.4602",
+            "predicted": "We are asked to estimate the bit error probability $ P_b $ for a coherent 2ASK (Amplitude Shift Keying) system with equal priors in additive white Gaussian noise (AWGN), given:\n\n- Received amplitude: $ A = 2 \\, \\text{mV} = 2 \\times 10^{-3} \\, \\text{V} $\n- Bit rate: $ R_b = 2 \\times 10^6 \\, \\text{bit/s} $\n- One-sided noise power spectral density: $ N_0 = 5 \\times 10^{-11} \\, \\text{W/Hz} $\n- Energy per bit: $ E_b = \\frac{A^2}{4R_b} $\n- Bit error probability: $ P_b = Q\\left( \\sqrt{\\frac{E_b}{N_0}} \\right) $\n\n---\n\n### Step 1: Compute $ E_b $\n\n$$\nE_b = \\frac{A^2}{4R_b}\n= \\frac{(2 \\times 10^{-3})^2}{4 \\times 2 \\times 10^6}\n= \\frac{4 \\times 10^{-6}}{8 \\times 10^6}\n= \\frac{4}{8} \\times 10^{-12}\n= 0.5 \\times 10^{-12}\n= 5 \\times 10^{-13} \\, \\text{J}\n$$\n\n---\n\n### Step 2: Compute $ \\frac{E_b}{N_0} $\n\n$$\n\\frac{E_b}{N_0}\n= \\frac{5 \\times 10^{-13}}{5 \\times 10^{-11}}\n= 10^{-2}\n= 0.01\n$$\n\n---\n\n### Step 3: Compute $ P_b = Q\\left( \\sqrt{\\frac{E_b}{N_0}} \\right) $\n\n$$\n\\sqrt{\\frac{E_b}{N_0}} = \\sqrt{0.01} = 0.1\n$$\n\nSo,\n\n$$\nP_b = Q(0.1)\n$$\n\nUsing standard values of the Q-function:\n\n- $ Q(0.1) \\approx 0.4602 $\n\n(You can confirm this using a Q-function table or calculator.)\n\n---\n\n### \u2705 Final Answer:\n\n$$\nP_b \\approx 0.4602\n$$\n\nThis is a surprisingly high bit error rate \u2014 typical for low signal-to-noise conditions. The system is operating far below the threshold where reliable communication would be expected.",
+            "expected_value": 0.4602,
+            "predicted_value": 0.4602,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_669",
+          "question": "Compute RTT for LEO altitude 1200 km with c=3\u00d710^8 m/s. Use one-way distance 1.2\u00d710^6 m.",
+          "expected_answer": "0.00800 s",
+          "agent_answer": "To compute the Round-Trip Time (RTT) for a signal traveling between a Low Earth Orbit (LEO) satellite at 1200 km altitude and a ground station, we use the one-way distance and the speed of light.\n\n### Given:\n- One-way distance = $ 1.2 \\times 10^6 $ meters  \n- Speed of light, $ c = 3 \\times 10^8 $ m/s\n\n### Step 1: Compute one-way propagation time\n$$\nt_{\\text{one-way}} = \\frac{\\text{distance}}{c} = \\frac{1.2 \\times 10^6}{3 \\times 10^8} = 0.004 \\text{ seconds} = 4 \\text{ milliseconds}\n$$\n\n### Step 2: Compute RTT (round-trip time)\n$$\n\\text{RTT} = 2 \\times t_{\\text{one-way}} = 2 \\times 4 \\text{ ms} = 8 \\text{ milliseconds}\n$$\n\n### \u2705 Final Answer:\n**RTT = 8 ms**",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.00800 s",
+            "predicted": "To compute the Round-Trip Time (RTT) for a signal traveling between a Low Earth Orbit (LEO) satellite at 1200 km altitude and a ground station, we use the one-way distance and the speed of light.\n\n### Given:\n- One-way distance = $ 1.2 \\times 10^6 $ meters  \n- Speed of light, $ c = 3 \\times 10^8 $ m/s\n\n### Step 1: Compute one-way propagation time\n$$\nt_{\\text{one-way}} = \\frac{\\text{distance}}{c} = \\frac{1.2 \\times 10^6}{3 \\times 10^8} = 0.004 \\text{ seconds} = 4 \\text{ milliseconds}\n$$\n\n### Step 2: Compute RTT (round-trip time)\n$$\n\\text{RTT} = 2 \\times t_{\\text{one-way}} = 2 \\times 4 \\text{ ms} = 8 \\text{ milliseconds}\n$$\n\n### \u2705 Final Answer:\n**RTT = 8 ms**",
+            "expected_value": 0.008,
+            "predicted_value": 0.008,
+            "expected_unit": "s",
+            "predicted_unit": "ms"
+          }
+        },
+        {
+          "problem_id": "test_590",
+          "question": "Given J0(0.628)\u22480.901, compute \u03c1=J0^2.",
+          "expected_answer": "0.812",
+          "agent_answer": "We are given:\n\n$$\nJ_0(0.628) \\approx 0.901\n$$\n\nWe are asked to compute:\n\n$$\n\\rho = J_0^2 = [J_0(0.628)]^2\n$$\n\nSo,\n\n$$\n\\rho \\approx (0.901)^2 = 0.811801\n$$\n\nRounded to three decimal places (as is typical for such approximations):\n\n$$\n\\rho \\approx 0.812\n$$\n\n\u2705 Final Answer:\n$$\n\\rho \\approx 0.812\n$$",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.812",
+            "predicted": "We are given:\n\n$$\nJ_0(0.628) \\approx 0.901\n$$\n\nWe are asked to compute:\n\n$$\n\\rho = J_0^2 = [J_0(0.628)]^2\n$$\n\nSo,\n\n$$\n\\rho \\approx (0.901)^2 = 0.811801\n$$\n\nRounded to three decimal places (as is typical for such approximations):\n\n$$\n\\rho \\approx 0.812\n$$\n\n\u2705 Final Answer:\n$$\n\\rho \\approx 0.812\n$$",
+            "expected_value": 0.812,
+            "predicted_value": 0.812,
+            "expected_unit": null,
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_385",
+          "question": "A system uses R_s=250 symbols/s. What average fade duration does this correspond to if R_s=1/T_f?",
+          "expected_answer": "0.004 s",
+          "agent_answer": "We are given:\n\n- Symbol rate: $ R_s = 250 $ symbols/second  \n- Relationship: $ R_s = \\frac{1}{T_f} $, where $ T_f $ is the **fade duration** (in seconds)\n\n### Step 1: Solve for $ T_f $\nFrom the equation:\n$$\nR_s = \\frac{1}{T_f}\n\\Rightarrow T_f = \\frac{1}{R_s}\n$$\n\nSubstitute $ R_s = 250 $:\n$$\nT_f = \\frac{1}{250} = 0.004 \\text{ seconds} = 4 \\text{ milliseconds}\n$$\n\n### \u2705 Final Answer:\n**The average fade duration is 4 milliseconds.**",
+          "score": 0.5,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "0.004 s",
+            "predicted": "We are given:\n\n- Symbol rate: $ R_s = 250 $ symbols/second  \n- Relationship: $ R_s = \\frac{1}{T_f} $, where $ T_f $ is the **fade duration** (in seconds)\n\n### Step 1: Solve for $ T_f $\nFrom the equation:\n$$\nR_s = \\frac{1}{T_f}\n\\Rightarrow T_f = \\frac{1}{R_s}\n$$\n\nSubstitute $ R_s = 250 $:\n$$\nT_f = \\frac{1}{250} = 0.004 \\text{ seconds} = 4 \\text{ milliseconds}\n$$\n\n### \u2705 Final Answer:\n**The average fade duration is 4 milliseconds.**",
+            "expected_value": 0.004,
+            "predicted_value": 4.0,
+            "expected_unit": "s",
+            "predicted_unit": null
+          }
+        },
+        {
+          "problem_id": "test_224",
+          "question": "Shannon spectral efficiency. If SNR=6 dB, compute C/B in bit/s/Hz.",
+          "expected_answer": "2.32 bit/s/Hz",
+          "agent_answer": "Shannon's spectral efficiency is given by the Shannon-Hartley theorem:\n\n\\[\nC = B \\log_2(1 + \\text{SNR})\n\\]\n\nWhere:\n- \\( C \\) is the channel capacity in bits per second,\n- \\( B \\) is the bandwidth in Hz,\n- \\( \\text{SNR} \\) is the signal-to-noise ratio (linear, not in dB).\n\nYou're asked to compute \\( \\frac{C}{B} \\), which is the **spectral efficiency** in bits/second/Hz.\n\nGiven:  \n\\( \\text{SNR} = 6 \\, \\text{dB} \\)\n\nFirst, convert SNR from dB to linear scale:\n\n\\[\n\\text{SNR}_{\\text{linear}} = 10^{\\frac{6}{10}} = 10^{0.6} \\approx 3.981\n\\]\n\nNow plug into the formula:\n\n\\[\n\\frac{C}{B} = \\log_2(1 + \\text{SNR}) = \\log_2(1 + 3.981) = \\log_2(4.981)\n\\]\n\nCompute the base-2 logarithm:\n\n\\[\n\\log_2(4.981) = \\frac{\\ln(4.981)}{\\ln(2)} \\approx \\frac{1.606}{0.6931} \\approx 2.317\n\\]\n\n### \u2705 Final Answer:\n\\[\n\\frac{C}{B} \\approx 2.32 \\, \\text{bits/second/Hz}\n\\]",
+          "score": 1.0,
+          "answer_type": "numeric",
+          "details": {
+            "answer_type": "numeric",
+            "expected": "2.32 bit/s/Hz",
+            "predicted": "Shannon's spectral efficiency is given by the Shannon-Hartley theorem:\n\n\\[\nC = B \\log_2(1 + \\text{SNR})\n\\]\n\nWhere:\n- \\( C \\) is the channel capacity in bits per second,\n- \\( B \\) is the bandwidth in Hz,\n- \\( \\text{SNR} \\) is the signal-to-noise ratio (linear, not in dB).\n\nYou're asked to compute \\( \\frac{C}{B} \\), which is the **spectral efficiency** in bits/second/Hz.\n\nGiven:  \n\\( \\text{SNR} = 6 \\, \\text{dB} \\)\n\nFirst, convert SNR from dB to linear scale:\n\n\\[\n\\text{SNR}_{\\text{linear}} = 10^{\\frac{6}{10}} = 10^{0.6} \\approx 3.981\n\\]\n\nNow plug into the formula:\n\n\\[\n\\frac{C}{B} = \\log_2(1 + \\text{SNR}) = \\log_2(1 + 3.981) = \\log_2(4.981)\n\\]\n\nCompute the base-2 logarithm:\n\n\\[\n\\log_2(4.981) = \\frac{\\ln(4.981)}{\\ln(2)} \\approx \\frac{1.606}{0.6931} \\approx 2.317\n\\]\n\n### \u2705 Final Answer:\n\\[\n\\frac{C}{B} \\approx 2.32 \\, \\text{bits/second/Hz}\n\\]",
+            "expected_value": 2.32,
+            "predicted_value": 2.32,
+            "expected_unit": "bit/s/hz",
+            "predicted_unit": null
+          }
+        }
+      ],
+      "benchmark": "WCHW",
+      "version": "1.0.0"
+    }
+  ]
+}
