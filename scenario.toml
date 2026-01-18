@@ -15,7 +15,7 @@ name = "wireless_solver"
 env = { DASHSCOPE_API_KEY = "${DASHSCOPE_API_KEY}" }
 
 [config]
-# WCHW Benchmark Configuration
+# WCHW Benchmark Configuration 
 num_problems = 10
 timeout = 120
 dataset = "test"  # Options: "test", "validate"
