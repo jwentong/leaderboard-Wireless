@@ -10,7 +10,7 @@ image = "ghcr.io/jwentong/green-agent:latest"  # For local testing
 env = { LOG_LEVEL = "INFO" }
 
 [[participants]]
-# Purple Agent: Wireless Communication Solver (Baseline)
+# Purple Agent: Wireless Communication Solver (Baseline) 
 # Docker image: ghcr.io/jwentong/purple-agent-wirelessagent:latest
 agentbeats_id = ""  # Fill in after registering on agentbeats.dev
 image = "ghcr.io/jwentong/purple-agent-wirelessagent:latest"  # For local testing
