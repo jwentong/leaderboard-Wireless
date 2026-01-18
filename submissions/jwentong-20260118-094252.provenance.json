@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/jwentong/wchw-green-agent@sha256:5d79bedfae7a01ebae02decc27f7d3bc96baa7c6fbcceafd0bb1418d092e9861",
+    "wireless_solver": "ghcr.io/jwentong/purple-agent-wirelessbaseline@sha256:ad6daa13d3ed00edd54fccd3a51145a1901e1ec1ae3babc8a538a75fbd1ce505",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-18T09:42:52Z",
+  "github_actions": {
+    "run_url": "https://github.com/jwentong/leaderboard-Wireless/actions/runs/21109657799",
+    "run_logs_url": "https://api.github.com/repos/jwentong/leaderboard-Wireless/actions/runs/21109657799/logs",
+    "ref": "refs/heads/jwentong-patch-4",
+    "sha": "bcda011d50aa69f14f78ee2cdefa8a2b8e4e9f3c",
+    "repository_url": "https://github.com/jwentong/leaderboard-Wireless",
+    "workflow_ref": "jwentong/leaderboard-Wireless/.github/workflows/run-scenario.yml@refs/heads/jwentong-patch-4",
+    "workflow_sha": "bcda011d50aa69f14f78ee2cdefa8a2b8e4e9f3c"
+  }
+}
