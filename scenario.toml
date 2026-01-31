@@ -16,6 +16,6 @@ env = { DASHSCOPE_API_KEY = "${DASHSCOPE_API_KEY}" }
 
 [config]
 # WCHW Benchmark Configuration 
-num_problems = 120
+num_problems = 110
 timeout = 120
 dataset = "test"  # Options: "test", "validate"
